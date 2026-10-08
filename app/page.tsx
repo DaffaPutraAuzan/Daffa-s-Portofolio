@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import HireModal from "@/components/HireModal";
 import LocaleSwitch from "@/components/LocaleSwitch";
 import { Rich, useLocale } from "@/components/LocaleProvider";
 
@@ -21,6 +22,7 @@ function useReveal() {
 export default function Page() {
   useReveal();
   const { t } = useLocale();
+  const [hireOpen, setHireOpen] = useState(false);
 
   return (
     <main className="min-h-screen overflow-x-clip">
@@ -39,12 +41,13 @@ export default function Page() {
             </div>
             <div className="flex items-center gap-2 sm:gap-3 shrink-0">
               <LocaleSwitch />
-              <a
-                href="#contact"
+              <button
+                type="button"
+                onClick={() => setHireOpen(true)}
                 className="rounded-full bg-amberbrand px-4 py-2 text-[13px] sm:text-sm font-bold text-ink hover:bg-cream whitespace-nowrap"
               >
                 {t.nav.hire}
-              </a>
+              </button>
             </div>
           </nav>
         </div>
@@ -213,9 +216,11 @@ export default function Page() {
               in LinkedIn
             </a>
           </div>
-          <p className="mt-6 text-xs opacity-60">{t.contact.footer}</p>
+          <p className="mt-6 text-xs opacity-60">{t.contact.copyright}</p>
         </div>
       </section>
+
+      <HireModal open={hireOpen} onClose={() => setHireOpen(false)} />
     </main>
   );
 }

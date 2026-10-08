@@ -30,6 +30,17 @@ export type SkillGroup = { title: string; items: string[] };
 
 type Dict = {
   nav: { about: string; experience: string; skills: string; contact: string; hire: string };
+  hire: {
+    title: string;
+    subtitle: string;
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+    submit: string;
+    cancel: string;
+    note: string;
+  };
   hero: {
     badge: string;
     lead: string;
@@ -68,7 +79,7 @@ type Dict = {
   contact: {
     title: string;
     body: string;
-    footer: string;
+    copyright: string;
   };
 };
 
@@ -80,6 +91,17 @@ export const dictionaries: Record<Locale, Dict> = {
       skills: "Skills",
       contact: "Contact",
       hire: "Hire Me",
+    },
+    hire: {
+      title: "Hire Me",
+      subtitle: "Fill this in and your email app will open with the message ready to send.",
+      name: "Your name",
+      email: "Your email",
+      subject: "Subject",
+      message: "Message",
+      submit: "Open in email app",
+      cancel: "Cancel",
+      note: "Your message stays on your device until you send it.",
     },
     hero: {
       badge: "● PORTFOLIO — ELECTRICAL ENGINEERING",
@@ -156,7 +178,7 @@ export const dictionaries: Record<Locale, Dict> = {
     contact: {
       title: "Let’s connect!",
       body: "Open to internships, control and automation projects, and entry-level Electrical Engineering roles. Based in South Tangerang, available for on-site or hybrid work.",
-      footer: "© 2026 Daffa Mahardika Auzan Putra • Built with Next.js + Tailwind • Ready to deploy on Vercel",
+      copyright: "© 2026 Daffa Mahardika Auzan Putra",
     },
   },
 
@@ -167,6 +189,17 @@ export const dictionaries: Record<Locale, Dict> = {
       skills: "Keahlian",
       contact: "Kontak",
       hire: "Hire Me",
+    },
+    hire: {
+      title: "Hire Me",
+      subtitle: "Isi form ini, aplikasi email Anda akan terbuka dengan pesan yang sudah siap dikirim.",
+      name: "Nama Anda",
+      email: "Email Anda",
+      subject: "Subjek",
+      message: "Pesan",
+      submit: "Buka di aplikasi email",
+      cancel: "Batal",
+      note: "Pesan Anda tetap di perangkat ini sampai Anda mengirimnya.",
     },
     hero: {
       badge: "● PORTOFOLIO — TEKNIK ELEKTRO",
@@ -243,7 +276,7 @@ export const dictionaries: Record<Locale, Dict> = {
     contact: {
       title: "Mari terhubung!",
       body: "Terbuka untuk magang, proyek control/automation, dan posisi entry-level Electrical Engineering. Domisili Tangerang Selatan, bersedia onsite/hybrid.",
-      footer: "© 2026 Daffa Mahardika Auzan Putra • Built with Next.js + Tailwind • Siap deploy ke Vercel",
+      copyright: "© 2026 Daffa Mahardika Auzan Putra",
     },
   },
 };
