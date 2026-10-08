@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import HireModal from "@/components/HireModal";
 import LocaleSwitch from "@/components/LocaleSwitch";
 import { Rich, useLocale } from "@/components/LocaleProvider";
+import { CONTACT_EMAIL, CONTACT_LINKEDIN, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "@/lib/contact";
 
 const SKILL_ICONS = ["⚡", "🤖", "🔌", "🎤"];
 
@@ -71,7 +72,7 @@ export default function Page() {
               <a href="#experience" className="rounded-full bg-ink px-6 py-3 font-bold text-center text-cream hover:bg-tealdeep">
                 {t.hero.cta}
               </a>
-              <a href="https://www.linkedin.com/in/daffamap" target="_blank" rel="noreferrer" className="rounded-full border-2 border-ink px-6 py-3 font-bold text-center hover:bg-ink hover:text-cream">
+              <a href={CONTACT_LINKEDIN} target="_blank" rel="noreferrer" className="rounded-full border-2 border-ink px-6 py-3 font-bold text-center hover:bg-ink hover:text-cream">
                 LinkedIn ↗
               </a>
             </div>
@@ -206,13 +207,13 @@ export default function Page() {
           <h2 className="font-display text-[32px] sm:text-4xl md:text-6xl leading-tight font-bold">{t.contact.title}</h2>
           <p className="mt-3 text-sm sm:text-base opacity-80 max-w-2xl mx-auto">{t.contact.body}</p>
           <div className="mt-6 sm:mt-7 flex flex-col sm:flex-row flex-wrap justify-center items-stretch sm:items-center gap-3 font-bold">
-            <a href="mailto:daffamahardikaauzan@gmail.com" className="rounded-full bg-cream text-ink px-5 sm:px-6 py-3 text-sm sm:text-base break-all">
-              ✉️ daffamahardikaauzan@gmail.com
+            <a href={`mailto:${CONTACT_EMAIL}`} className="rounded-full bg-cream text-ink px-5 sm:px-6 py-3 text-sm sm:text-base break-all">
+              ✉️ {CONTACT_EMAIL}
             </a>
-            <a href="tel:+6287876122015" className="rounded-full bg-amberbrand text-ink px-5 sm:px-6 py-3 text-sm sm:text-base">
-              📞 +62 878-7612-2015
+            <a href={CONTACT_PHONE_HREF} className="rounded-full bg-amberbrand text-ink px-5 sm:px-6 py-3 text-sm sm:text-base">
+              📞 {CONTACT_PHONE_DISPLAY}
             </a>
-            <a href="https://www.linkedin.com/in/daffamap" target="_blank" rel="noreferrer" className="rounded-full border-2 border-cream px-5 sm:px-6 py-3 text-sm sm:text-base">
+            <a href={CONTACT_LINKEDIN} target="_blank" rel="noreferrer" className="rounded-full border-2 border-cream px-5 sm:px-6 py-3 text-sm sm:text-base">
               in LinkedIn
             </a>
           </div>

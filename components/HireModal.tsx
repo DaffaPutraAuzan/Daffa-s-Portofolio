@@ -2,8 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLocale } from "@/components/LocaleProvider";
-
-const CONTACT_EMAIL = "daffamahardikaauzan@gmail.com";
+import { CONTACT_EMAIL } from "@/lib/contact";
 
 type Fields = { name: string; email: string; subject: string; message: string };
 

@@ -24,4 +24,4 @@ bun run start
 
 Foto: `public/profile.jpg` (dari WhatsApp Image). Ganti file itu saja untuk update foto.
 Data diri: edit `app/page.tsx` (experiences, skills, certificates).
-Kontak: daffamahardikaauzan@gmail.com / +6287876122015 / linkedin.com/in/daffamap
+Kontak: `lib/contact.ts` (satu sumber data untuk email, telepon, LinkedIn).
