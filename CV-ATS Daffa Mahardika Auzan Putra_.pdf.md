@@ -1,0 +1,21 @@
+# DAFFA MAHARDIKA AUZAN PUTRA
+
++6287876122015 | daffamahardikaauzan@gmail.com | [https://www.linkedin.com/in/daffamap](https://www.linkedin.com/in/daffamap) Tangerang Selatan, Banten, Indonesia Active undergraduate Electrical Engineering student at Diponegoro University. Experienced in Electrical Engineering committee activities. High enthusiasm and willingness to learn to develop non-technical skills through training or broaden knowledge to grow in Process Control Engineering. Experienced in teamwork, public speaking, and several committee events. Interested in Control System Technology, following Industry 5.0 developments, and taking courses on control systems.
+
+## Education
+
+**Universitas Diponegoro-Semarang, Jawa Tengah, Indonesia** Aug 2022 - Sep 2026 *Bachelor of Engineering, 3.26/4.00* Successfully assisted in implementing safety measures, enhancing workplace electrical safety standards.Educated new students on the importance of national defense, emphasizing the values of Pancasila and Bhinneka Tunggal Ika, resulting in increased awareness and understanding among participants.Implemented the Merdeka Belajar (Freedom to Learn) policy in the campus environment to support independent learning, leading to increased student engagement in creativity and innovation programs.Developed and facilitated workshops on risk management, preparedness, and disaster mitigation in higher education institutions during the pandemic.
+
+## Professional Experience
+
+**PT. Angkasa Pura Indonesia-Tangerang City, Banten, Indonesia** Jan 2025 - Feb 2025 *Internship* Internship Experience As an Electrical Protection Engineer at Soekarno-Hatta International Airport, Tangerang, Banten, Indonesia Assisted in the maintenance and inspection of electrical protection systems, including relays, SCADA, PLC, and fiber optic. Successfully assisted in implementing safety measures, enhancing workplace electrical safety standards. Participated in routine testing and commissioning of electrical protection devices in compliance with safety regulations. Collaborated with senior technicians to monitor and optimize power distribution systems. Learned to interpret technical schematics and relay coordination diagrams for effective troubleshooting.
+
+**PT. IAS Support Indonesia-Tangerang City, Banten, Indonesia** Jul 2025 - Aug 2025 *Internship* GIS Substation Division (2 Weeks) : Assisted in the operational monitoring and routine maintenance of gas-insulated switchgear (GIS) and high-voltage components to ensure system reliability. Power Station 1 Division (2 Weeks) : Supported the technical team in supervising power generation processes and performed maintenance on generators for medium-voltage requirements, including routine preventive inspections on electrical distribution units. Electrical Protection Division (1 Month): Gained hands-on experience in testing, calibrating, and troubleshooting protection relays and control circuits, while assisting in the monitoring and configuration of PLC and SCADA Systems to ensure power system stability and automation.
+
+## Organizational & Leadership Experience
+
+**Electrical Tesla Event-Semarang, Jawa Tengah** Sep 2024 - Nov 2024 *Sponsorship Coordinator Staff* Planned sponsorship strategies, including identifying potential sponsors, creating proposals, and defining sponsorship packages. Coordinated with internal stakeholders, including the chairman and committee, and conducted team training. Executed contracts and managed financial implementation to develop brand identity and facilitate event execution.
+
+## Skills, Certifications, and Awards
+
+**Webinars Attended** (2024): Automation Clinic Motor Protection and Control **Webinars Attended** (2024): Geothermal Drilling in Volcanic-Metamorphic (VMR) Basins-Challenges, Collaborative Engagements, Best Practices, and Performance Improvements **Webinars Attended** (2024): How to Write a Good Technical Paper **Internship Ceritficate**  (2025): Internship Certificate as an Electrical Protection Unit at PT. Angkasa Pura Indonesia **Internship Ceritficate**  (2025): Internship Certificate (2026): Electrical Engineering Intern at PT IAS Support Indonesia
