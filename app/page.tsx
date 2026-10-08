@@ -104,13 +104,15 @@ export default function Page() {
           </div>
 
           <div className="relative reveal visible mt-2 md:mt-0">
-            <div className="absolute z-10 top-3 left-3 sm:-top-6 sm:-left-6 rounded-2xl bg-amberbrand px-3 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base font-bold rotate-[-6deg] shadow-card">⚡ Control System</div>
-            <div className="absolute z-10 bottom-24 sm:bottom-10 left-3 sm:-left-8 rounded-2xl bg-ink text-cream px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold rotate-[4deg]">PLC • SCADA • Relay</div>
-            <div className="arch-photo overflow-hidden border-[5px] sm:border-[6px] border-ink shadow-card bg-sand floaty">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/profile.jpg" alt="Daffa Mahardika Auzan Putra" className="h-[380px] sm:h-[440px] md:h-[520px] w-full object-cover object-top" />
+            <div className="relative">
+              <div className="absolute z-10 top-3 left-3 sm:-top-6 sm:-left-6 rounded-2xl bg-amberbrand px-3 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base font-bold rotate-[-6deg] shadow-card">⚡ Control System</div>
+              <div className="absolute z-10 bottom-4 left-3 sm:bottom-6 sm:-left-8 rounded-2xl bg-ink text-cream px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold rotate-[4deg]">PLC • SCADA • Relay</div>
+              <div className="arch-photo overflow-hidden border-[5px] sm:border-[6px] border-ink shadow-card bg-sand floaty">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/profile.jpg" alt="Daffa Mahardika Auzan Putra" className="h-[380px] sm:h-[440px] md:h-[520px] w-full object-cover object-top" />
+              </div>
             </div>
-            <div className="mt-4 rounded-2xl bg-tealdeep text-cream p-4 flex items-center justify-between gap-3">
+            <div className="mt-6 rounded-2xl bg-tealdeep text-cream p-4 flex items-center justify-between gap-3">
               <div className="min-w-0"><div className="font-bold text-sm sm:text-base truncate">Tangerang Selatan, Banten</div><div className="text-xs sm:text-sm opacity-80">Open for internship / entry-level</div></div>
               <div className="text-3xl shrink-0">◎</div>
             </div>
