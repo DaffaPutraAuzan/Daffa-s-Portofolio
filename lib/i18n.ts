@@ -30,7 +30,16 @@ export type SkillGroup = { title: string; items: string[] };
 
 export type Org = { eyebrow: string; title: string; body: string };
 
-export type CertItem = { icon: string; title: string; meta: string };
+export type Certificate = {
+  id: string;
+  title: string;
+  issuer: string;
+  date: string;
+  credentialId?: string;
+  skills: string[];
+  link: string;
+  issuerLogo?: string;
+};
 
 type Dict = {
   nav: { about: string; experience: string; skills: string; certifications: string; contact: string; hire: string };
@@ -90,7 +99,12 @@ type Dict = {
   certifications: {
     eyebrow: string;
     title: string;
-    items: CertItem[];
+    issued: string;
+    expires: string;
+    credentialId: string;
+    skills: string;
+    showCredential: string;
+    items: Certificate[];
   };
   contact: {
     title: string;
@@ -218,12 +232,60 @@ export const dictionaries: Record<Locale, Dict> = {
     },
     certifications: {
       eyebrow: "CERTIFICATIONS",
-      title: "Certified & tested.",
+      title: "Licenses & Certifications",
+      issued: "Issued",
+      expires: "Expires",
+      credentialId: "Credential ID",
+      skills: "Skills",
+      showCredential: "Show credential ↗",
       items: [
-        { icon: "🎥", title: "Automation Clinic — Motor Protection and Control", meta: "Webinar • 2024" },
-        { icon: "📜", title: "Internship Certificate — Electrical Protection Unit", meta: "PT. Angkasa Pura Indonesia • 2025" },
-        { icon: "📜", title: "Internship Certificate — Electrical Engineering Intern", meta: "PT. IAS Support Indonesia • 2026" },
-        { icon: "🌍", title: "TOEFL EPT — Score 586/677", meta: "SEU Diponegoro University • 2026" },
+        {
+          id: "angkasa-pura",
+          title: "Certificate of Internship - Electrical Protection",
+          issuer: "PT Angkasa Pura Indonesia",
+          date: "Issued Jan 2025 · Expires Dec 2036",
+          credentialId: "STI.CGK.A.BS.0112/DL.13.03/2025",
+          skills: ["Protective Relays", "Substation Automation", "SCADA", "PLC", "Fiber Optic"],
+          link: "https://drive.google.com/file/d/1OAHo-ZRn1H6bChjrGkaKZ-wKDX9n_Qs6/view?usp=sharing",
+          issuerLogo: "🛡️",
+        },
+        {
+          id: "ias-support",
+          title: "Certificate of Internship - Electrical Engineering",
+          issuer: "PT IAS Support Indonesia",
+          date: "Issued Jul 2025 · Expired Aug 2025",
+          skills: ["GIS", "Power Station", "Protection Relay", "PLC", "SCADA"],
+          link: "https://drive.google.com/file/d/1GucV3PzdbTDS_zah5Xy3i50m-VbS6lE9/view?usp=sharing",
+          issuerLogo: "⚡",
+        },
+        {
+          id: "toefl-ept",
+          title: "English Proficiency Test (EPT) — TOEFL Score Equivalent 586",
+          issuer: "Service English Unit (SEU), Universitas Diponegoro",
+          date: "Issued May 2026 · Expires May 2028",
+          credentialId: "469/UN7.F6/SR/V/2026",
+          skills: ["TOEFL", "Technical English"],
+          link: "https://drive.google.com/file/d/1cD3ztY3-uqw7xrXPNtw1Ia5YfdpA-ENs/view?usp=sharing",
+          issuerLogo: "🌍",
+        },
+        {
+          id: "tko",
+          title: "Student Development Staff Certification",
+          issuer: "Biro Teknik Kontrol Otomat (TKO) — Undip",
+          date: "Issued Jan 2025 · Expires Dec 2025",
+          skills: ["Control Systems", "Automation", "Leadership", "Electrical Engineering"],
+          link: "https://drive.google.com/file/d/1j5yH83KfntDHgsWRkdSdEfbFKC8XjcnY/view?usp=sharing",
+          issuerLogo: "⚙️",
+        },
+        {
+          id: "schneider",
+          title: "Schneider Electric Automation & Control Training",
+          issuer: "Schneider Electric / Educational Program",
+          date: "Issued 2025",
+          skills: ["Schneider Systems", "Industrial Automation", "SCADA", "PLC"],
+          link: "https://drive.google.com/file/d/1MEJ-okdxNCO_IgQugDM5k0gXebwrusoD/view?usp=sharing",
+          issuerLogo: "🔧",
+        },
       ],
     },
     contact: {
@@ -351,12 +413,60 @@ export const dictionaries: Record<Locale, Dict> = {
     },
     certifications: {
       eyebrow: "SERTIFIKASI",
-      title: "Tersertifikasi & teruji.",
+      title: "Lisensi & Sertifikasi",
+      issued: "Diterbitkan",
+      expires: "Berlaku hingga",
+      credentialId: "ID Kredensial",
+      skills: "Keterampilan",
+      showCredential: "Lihat kredensial ↗",
       items: [
-        { icon: "🎥", title: "Automation Clinic — Motor Protection and Control", meta: "Webinar • 2024" },
-        { icon: "📜", title: "Sertifikat Magang — Electrical Protection Unit", meta: "PT. Angkasa Pura Indonesia • 2025" },
-        { icon: "📜", title: "Sertifikat Magang — Electrical Engineering Intern", meta: "PT. IAS Support Indonesia • 2026" },
-        { icon: "🌍", title: "TOEFL EPT — Skor 586/677", meta: "SEU Universitas Diponegoro • 2026" },
+        {
+          id: "angkasa-pura",
+          title: "Sertifikat Magang - Proteksi Elektrik",
+          issuer: "PT Angkasa Pura Indonesia",
+          date: "Diterbitkan Jan 2025 · Berlaku hingga Des 2036",
+          credentialId: "STI.CGK.A.BS.0112/DL.13.03/2025",
+          skills: ["Protective Relays", "Substation Automation", "SCADA", "PLC", "Fiber Optic"],
+          link: "https://drive.google.com/file/d/1OAHo-ZRn1H6bChjrGkaKZ-wKDX9n_Qs6/view?usp=sharing",
+          issuerLogo: "🛡️",
+        },
+        {
+          id: "ias-support",
+          title: "Sertifikat Magang - Teknik Elektro",
+          issuer: "PT IAS Support Indonesia",
+          date: "Diterbitkan Jul 2025 · Berakhir Agu 2025",
+          skills: ["GIS", "Power Station", "Protection Relay", "PLC", "SCADA"],
+          link: "https://drive.google.com/file/d/1GucV3PzdbTDS_zah5Xy3i50m-VbS6lE9/view?usp=sharing",
+          issuerLogo: "⚡",
+        },
+        {
+          id: "toefl-ept",
+          title: "English Proficiency Test (EPT) — Skor TOEFL 586",
+          issuer: "Service English Unit (SEU), Universitas Diponegoro",
+          date: "Diterbitkan Mei 2026 · Berlaku hingga Mei 2028",
+          credentialId: "469/UN7.F6/SR/V/2026",
+          skills: ["TOEFL", "Bahasa Inggris Teknis"],
+          link: "https://drive.google.com/file/d/1cD3ztY3-uqw7xrXPNtw1Ia5YfdpA-ENs/view?usp=sharing",
+          issuerLogo: "🌍",
+        },
+        {
+          id: "tko",
+          title: "Sertifikasi Staff Student Development",
+          issuer: "Biro Teknik Kontrol Otomat (TKO) — Undip",
+          date: "Diterbitkan Jan 2025 · Berlaku hingga Des 2025",
+          skills: ["Sistem Kendali", "Automasi", "Kepemimpinan", "Teknik Elektro"],
+          link: "https://drive.google.com/file/d/1j5yH83KfntDHgsWRkdSdEfbFKC8XjcnY/view?usp=sharing",
+          issuerLogo: "⚙️",
+        },
+        {
+          id: "schneider",
+          title: "Schneider Electric Automation & Control Training",
+          issuer: "Schneider Electric / Program Edukasi",
+          date: "Diterbitkan 2025",
+          skills: ["Sistem Schneider", "Automasi Industri", "SCADA", "PLC"],
+          link: "https://drive.google.com/file/d/1MEJ-okdxNCO_IgQugDM5k0gXebwrusoD/view?usp=sharing",
+          issuerLogo: "🔧",
+        },
       ],
     },
     contact: {

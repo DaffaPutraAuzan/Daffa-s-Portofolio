@@ -2,12 +2,19 @@
 
 import { useEffect, useState } from "react";
 import HireModal from "@/components/HireModal";
+import CertificateCard from "@/components/CertificateCard";
 import LocaleSwitch from "@/components/LocaleSwitch";
 import { Rich, useLocale } from "@/components/LocaleProvider";
 import { CONTACT_EMAIL, CONTACT_LINKEDIN, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "@/lib/contact";
 
 const SKILL_ICONS = ["⚡", "🤖", "🔌", "🎤"];
 const ORG_ICONS = ["🤝", "⚙️"];
+
+// Credential links for experience cards
+const EXPERIENCE_CREDENTIAL_LINKS: Record<string, string> = {
+  "PT. Angkasa Pura Indonesia": "https://drive.google.com/file/d/1OAHo-ZRn1H6bChjrGkaKZ-wKDX9n_Qs6/view?usp=sharing",
+  "PT. IAS Support Indonesia": "https://drive.google.com/file/d/1GucV3PzdbTDS_zah5Xy3i50m-VbS6lE9/view?usp=sharing",
+};
 
 function useReveal() {
   useEffect(() => {
@@ -161,21 +168,39 @@ export default function Page() {
           <p className="reveal text-xs font-extrabold tracking-[0.25em] text-tealdeep">{t.experience.eyebrow}</p>
           <h2 className="reveal font-display text-[28px] sm:text-4xl md:text-5xl leading-tight font-bold">{t.experience.title}</h2>
           <div className="mt-6 sm:mt-8 grid md:grid-cols-2 gap-4 sm:gap-6">
-            {t.experience.items.map((e) => (
-              <article key={e.company} className="reveal rounded-3xl bg-white p-6 sm:p-7 shadow-card border-t-8 border-ink">
-                <div className="text-xs font-bold text-tealdeep">{e.period} • {e.location}</div>
-                <h3 className="text-xl font-extrabold mt-1">{e.company}</h3>
-                <div className="inline-block mt-2 rounded-full bg-ink text-cream px-3 py-1 text-xs font-bold">{e.role}</div>
-                <ul className="mt-4 space-y-2 text-[15px] text-ink/80 list-disc pl-5">
-                  {e.points.map((p, i) => <li key={i}>{p}</li>)}
-                </ul>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {e.tags.map((tag) => (
-                    <span key={tag} className="text-xs font-bold rounded-full bg-mutedblue px-3 py-1">{tag}</span>
-                  ))}
-                </div>
-              </article>
-            ))}
+            {t.experience.items.map((e) => {
+              const credentialLink = EXPERIENCE_CREDENTIAL_LINKS[e.company];
+              return (
+                <article key={e.company} className="reveal rounded-3xl bg-white p-6 sm:p-7 shadow-card border-t-8 border-ink">
+                  <div className="text-xs font-bold text-tealdeep">{e.period} • {e.location}</div>
+                  <h3 className="text-xl font-extrabold mt-1">{e.company}</h3>
+                  <div className="inline-block mt-2 rounded-full bg-ink text-cream px-3 py-1 text-xs font-bold">{e.role}</div>
+                  <ul className="mt-4 space-y-2 text-[15px] text-ink/80 list-disc pl-5">
+                    {e.points.map((p, i) => <li key={i}>{p}</li>)}
+                  </ul>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {e.tags.map((tag) => (
+                      <span key={tag} className="text-xs font-bold rounded-full bg-mutedblue px-3 py-1">{tag}</span>
+                    ))}
+                  </div>
+                  {credentialLink && (
+                    <div className="mt-4 pt-3 border-t border-ink/5">
+                      <a
+                        href={credentialLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 text-[12px] font-semibold text-ink/70 border border-ink/15 rounded-full hover:border-tealdeep hover:text-tealdeep hover:bg-tealdeep/5 transition-all"
+                      >
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                        </svg>
+                        Show credential ↗
+                      </a>
+                    </div>
+                  )}
+                </article>
+              );
+            })}
           </div>
 
           <div className="mt-4 sm:mt-6 grid md:grid-cols-2 gap-4 sm:gap-6">
@@ -222,13 +247,19 @@ export default function Page() {
         <div className="mx-auto max-w-6xl px-4 sm:px-5">
           <p className="reveal text-xs font-extrabold tracking-[0.25em] text-tealdeep">{t.certifications.eyebrow}</p>
           <h2 className="reveal font-display text-[28px] sm:text-4xl md:text-5xl leading-tight font-bold">{t.certifications.title}</h2>
-          <div className="mt-6 sm:mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-            {t.certifications.items.map((c) => (
-              <div key={c.title} className="reveal rounded-3xl bg-white p-6 shadow-card border-t-8 border-amberbrand">
-                <div className="text-3xl">{c.icon}</div>
-                <h3 className="font-extrabold text-[15px] leading-snug mt-2">{c.title}</h3>
-                <p className="mt-2 text-xs font-bold text-tealdeep">{c.meta}</p>
-              </div>
+          <div className="mt-6 sm:mt-8 space-y-4 sm:space-y-5">
+            {t.certifications.items.map((cert) => (
+              <CertificateCard
+                key={cert.id}
+                cert={cert}
+                t={{
+                  issued: t.certifications.issued || "Issued",
+                  expires: t.certifications.expires || "Expires",
+                  credentialId: t.certifications.credentialId || "Credential ID",
+                  skills: t.certifications.skills || "Skills",
+                  showCredential: t.certifications.showCredential || "Show credential",
+                }}
+              />
             ))}
           </div>
         </div>
