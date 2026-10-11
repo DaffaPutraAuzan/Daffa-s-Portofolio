@@ -28,8 +28,12 @@ export type Experience = {
 
 export type SkillGroup = { title: string; items: string[] };
 
+export type Org = { eyebrow: string; title: string; body: string };
+
+export type CertItem = { icon: string; title: string; meta: string };
+
 type Dict = {
-  nav: { about: string; experience: string; skills: string; contact: string; hire: string };
+  nav: { about: string; experience: string; skills: string; certifications: string; contact: string; hire: string };
   hire: {
     title: string;
     subtitle: string;
@@ -66,21 +70,27 @@ type Dict = {
     eduEyebrow: string;
     eduSchool: string;
     eduMeta: string;
-    eduPoints: string[];
+    eduCoursesLabel: string;
+    eduCourses: string[];
+    eduFinalLabel: string;
+    eduFinalProject: string;
     eduFocus: string;
   };
   experience: {
     eyebrow: string;
     title: string;
     items: Experience[];
-    orgEyebrow: string;
-    orgTitle: string;
-    orgBody: string;
+    orgs: Org[];
   };
   skills: {
     eyebrow: string;
     title: string;
     groups: SkillGroup[];
+  };
+  certifications: {
+    eyebrow: string;
+    title: string;
+    items: CertItem[];
   };
   contact: {
     title: string;
@@ -95,6 +105,7 @@ export const dictionaries: Record<Locale, Dict> = {
       about: "About",
       experience: "Experience",
       skills: "Skills",
+      certifications: "Certifications",
       contact: "Contact",
       hire: "Hire Me",
     },
@@ -117,36 +128,58 @@ export const dictionaries: Record<Locale, Dict> = {
     },
     hero: {
       badge: "● PORTFOLIO — ELECTRICAL ENGINEERING",
-      lead: "Active Electrical Engineering student at **Universitas Diponegoro** (2022–2026, GPA 3.26). Hands-on internship experience in airport electrical protection and GIS / power stations. Focused on **Control System Technology** and the evolution of **Industry 5.0**.",
+      lead: "Fresh graduate in Electrical Engineering from **Universitas Diponegoro** (2022–2026, GPA 3.26). Hands-on internship experience in airport electrical protection and GIS / power stations. Focused on **Control System Technology** and the evolution of **Industry 5.0**.",
       cta: "View Experience",
-      stats: ["Internships\nBUMN / Support", "GPA / 4.00\nUNDIP", "Skill\nAreas"],
+      stats: ["Internships\nBUMN / Support", "GPA / 4.00\nUNDIP", "Certifications\n2024 — 2026"],
       photoTopBadge: "⚡ Control System",
       photoBottomBadge: "PLC • SCADA • Relay",
       location: "South Tangerang, Banten",
-      locationSub: "Open for internship / entry-level",
+      locationSub: "Open for full-time / entry-level roles",
     },
     marquee:
       "PLC • SCADA • PROTECTION RELAY • GIS • POWER DISTRIBUTION • CONTROL SYSTEM • FIBER OPTIC • INDUSTRY 5.0 • PLC • SCADA • PROTECTION RELAY • GIS • POWER DISTRIBUTION • ",
     about: {
       eyebrow: "ABOUT ME",
       title: "An engineer who loves learning & working in a team.",
-      body: "I am an Electrical Engineering student at UNDIP with a strong enthusiasm for developing soft skills while deepening my knowledge of **Process Control Engineering**. Experienced in teamwork, public speaking, and event organising. I am drawn to control system technology and keep pace with Industry 5.0 developments, including control system coursework.",
+      body: "I am a fresh graduate in Electrical Engineering from UNDIP with a strong enthusiasm for developing soft skills while deepening my knowledge of **Process Control Engineering**. Experienced in teamwork, public speaking, and event organising. I am drawn to control system technology and keep pace with Industry 5.0 developments, including control system coursework.",
       chips: ["Teamwork", "Public Speaking", "Problem Solving", "Willingness to Learn"],
       eduEyebrow: "EDUCATION",
       eduSchool: "Universitas Diponegoro",
       eduMeta: "Semarang • Aug 2022 — Sep 2026 • B.S. Electrical Engineering • 3.26/4.00",
-      eduPoints: [
-        "Helped implement safety measures and electrical safety standards.",
-        "Delivered national defence education, conveying Pancasila and Bhinneka Tunggal Ika to new students.",
-        "Supported the Merdeka Belajar programme to foster student creativity and innovation.",
-        "Facilitated campus workshops on risk management and disaster mitigation.",
+      eduCoursesLabel: "RELEVANT COURSEWORK",
+      eduCourses: [
+        "Electrical Protection Systems",
+        "SCADA & PLC Systems",
+        "Power Distribution",
+        "Control Systems",
+        "Industrial Automation",
+        "Embedded Systems",
+        "Microcontroller Systems",
+        "Power System Analysis",
       ],
+      eduFinalLabel: "Final Project",
+      eduFinalProject:
+        "Centralized Logic Control Design and Fail-Safe Protection Mechanism in a Lift, Rotary, and Slider-Based Vertical Parking System.",
       eduFocus: "🎯 Focus: Control System Technology • Process Control • Automation • Industry 5.0",
     },
     experience: {
       eyebrow: "PROFESSIONAL EXPERIENCE",
       title: "Internships in critical infrastructure.",
       items: [
+        {
+          company: "PT. Angkasa Pura Indonesia",
+          location: "Soekarno-Hatta Airport, Tangerang",
+          period: "Jan 2025 — Feb 2025",
+          role: "Electrical Protection Engineer (Internship)",
+          points: [
+            "Internship as an Electrical Protection Engineer at Soekarno-Hatta International Airport, Tangerang.",
+            "Assisted in the maintenance and inspection of electrical protection systems, including relays, SCADA, PLC, and fiber optic.",
+            "Helped implement safety measures, enhancing workplace electrical safety standards.",
+            "Participated in routine testing and commissioning of protection devices in compliance with safety regulations.",
+            "Collaborated with senior technicians to monitor and optimize power distribution systems; learned to interpret schematics and relay coordination diagrams.",
+          ],
+          tags: ["Relay", "SCADA", "PLC", "Fiber Optic", "Power Distribution"],
+        },
         {
           company: "PT. IAS Support Indonesia",
           location: "Tangerang City, Banten",
@@ -159,23 +192,19 @@ export const dictionaries: Record<Locale, Dict> = {
           ],
           tags: ["GIS", "Power Station", "Protection Relay", "PLC", "SCADA"],
         },
+      ],
+      orgs: [
         {
-          company: "PT. Angkasa Pura Indonesia",
-          location: "Soekarno-Hatta Airport, Tangerang",
-          period: "Jan 2025 — Feb 2025",
-          role: "Electrical Protection Engineer (Internship)",
-          points: [
-            "Maintenance and inspection of electrical protection systems: relays, SCADA, PLC, and fibre optic links.",
-            "Routine testing and commissioning of protection equipment in line with safety regulations.",
-            "Collaborated on power distribution system optimisation and interpreted schematics and relay coordination diagrams.",
-          ],
-          tags: ["Relay", "SCADA", "PLC", "Fiber Optic", "Power Distribution"],
+          eyebrow: "ORGANISATION • SEP 2024 — NOV 2024",
+          title: "Electrical Tesla Event — Sponsorship Coordinator Staff",
+          body: "Built the sponsorship strategy, drafted proposals and sponsor packages, coordinated with the chair and committees, trained the team, executed contracts, and managed finances to strengthen the event's brand identity.",
+        },
+        {
+          eyebrow: "ORGANISATION • JAN 2025 — DEC 2025",
+          title: "Biro Teknik Kontrol Otomat (TKO) — Student Development Division Staff",
+          body: "Organised and facilitated technical training sessions, workshops, and skill development programmes in control engineering and automation for electrical engineering students; coordinated competency enhancement initiatives within the department.",
         },
       ],
-      orgEyebrow: "ORGANISATION • SEP 2024 — NOV 2024",
-      orgTitle: "Electrical Tesla Event — Sponsorship Coordinator Staff",
-      orgBody:
-        "Built the sponsorship strategy, drafted proposals and sponsor packages, coordinated with the chair and committees, trained the team, executed contracts, and managed finances to strengthen the event's brand identity.",
     },
     skills: {
       eyebrow: "SKILLS",
@@ -187,9 +216,19 @@ export const dictionaries: Record<Locale, Dict> = {
         { title: "Non-Technical", items: ["Teamwork", "Public Speaking", "Sponsorship & Negotiation", "Event Planning"] },
       ],
     },
+    certifications: {
+      eyebrow: "CERTIFICATIONS",
+      title: "Certified & tested.",
+      items: [
+        { icon: "🎥", title: "Automation Clinic — Motor Protection and Control", meta: "Webinar • 2024" },
+        { icon: "📜", title: "Internship Certificate — Electrical Protection Unit", meta: "PT. Angkasa Pura Indonesia • 2025" },
+        { icon: "📜", title: "Internship Certificate — Electrical Engineering Intern", meta: "PT. IAS Support Indonesia • 2026" },
+        { icon: "🌍", title: "TOEFL EPT — Score 586/677", meta: "SEU Diponegoro University • 2026" },
+      ],
+    },
     contact: {
       title: "Let’s connect!",
-      body: "Open to internships, control and automation projects, and entry-level Electrical Engineering roles. Based in South Tangerang, available for on-site or hybrid work.",
+      body: "Open to full-time Electrical Engineering roles and control/automation projects. Based in South Tangerang, available for on-site or hybrid work.",
       copyright: "© 2026 Daffa Mahardika Auzan Putra",
     },
   },
@@ -199,6 +238,7 @@ export const dictionaries: Record<Locale, Dict> = {
       about: "Tentang",
       experience: "Pengalaman",
       skills: "Keahlian",
+      certifications: "Sertifikasi",
       contact: "Kontak",
       hire: "Hire Me",
     },
@@ -221,36 +261,58 @@ export const dictionaries: Record<Locale, Dict> = {
     },
     hero: {
       badge: "● PORTOFOLIO — TEKNIK ELEKTRO",
-      lead: "Mahasiswa aktif Teknik Elektro **Universitas Diponegoro** (2022–2026, IPK 3.26). Berpengalaman magang proteksi elektrik bandara & GIS / power station. Fokus pada **Control System Technology** dan perkembangan **Industry 5.0**.",
+      lead: "Fresh graduate Teknik Elektro **Universitas Diponegoro** (2022–2026, IPK 3.26). Berpengalaman magang proteksi elektrik bandara & GIS / power station. Fokus pada **Control System Technology** dan perkembangan **Industry 5.0**.",
       cta: "Lihat Pengalaman",
-      stats: ["Magang\nBUMN / Support", "IPK / 4.00\nUNDIP", "Bidang\nKeahlian"],
+      stats: ["Magang\nBUMN / Support", "IPK / 4.00\nUNDIP", "Sertifikasi\n2024 — 2026"],
       photoTopBadge: "⚡ Control System",
       photoBottomBadge: "PLC • SCADA • Relay",
       location: "Tangerang Selatan, Banten",
-      locationSub: "Open for internship / entry-level",
+      locationSub: "Terbuka untuk full-time / entry-level",
     },
     marquee:
       "PLC • SCADA • PROTECTION RELAY • GIS • POWER DISTRIBUTION • CONTROL SYSTEM • FIBER OPTIC • INDUSTRY 5.0 • PLC • SCADA • PROTECTION RELAY • GIS • POWER DISTRIBUTION • ",
     about: {
       eyebrow: "TENTANG SAYA",
       title: "Engineer yang suka belajar & kerja tim.",
-      body: "Saya mahasiswa Teknik Elektro UNDIP dengan antusiasme tinggi untuk mengembangkan skill non-teknis dan memperdalam **Process Control Engineering**. Terbiasa teamwork, public speaking, dan kepanitiaan. Tertarik pada teknologi sistem kontrol dan mengikuti perkembangan Industry 5.0, termasuk course sistem kontrol.",
+      body: "Saya fresh graduate Teknik Elektro UNDIP dengan antusiasme tinggi untuk mengembangkan skill non-teknis dan memperdalam **Process Control Engineering**. Terbiasa teamwork, public speaking, dan kepanitiaan. Tertarik pada teknologi sistem kontrol dan mengikuti perkembangan Industry 5.0, termasuk course sistem kontrol.",
       chips: ["Teamwork", "Public Speaking", "Problem Solving", "Willingness to Learn"],
       eduEyebrow: "PENDIDIKAN",
       eduSchool: "Universitas Diponegoro",
       eduMeta: "Semarang • Agu 2022 — Sep 2026 • S1 Teknik Elektro • 3.26/4.00",
-      eduPoints: [
-        "Membantu implementasi safety measures & standar electrical safety.",
-        "Edukasi bela negara, nilai Pancasila & Bhinneka Tunggal Ika untuk mahasiswa baru.",
-        "Mendukung Merdeka Belajar untuk kreativitas & inovasi mahasiswa.",
-        "Fasilitasi workshop risk management & mitigasi bencana di kampus.",
+      eduCoursesLabel: "MATA KULIAH RELEVAN",
+      eduCourses: [
+        "Electrical Protection Systems",
+        "SCADA & PLC Systems",
+        "Power Distribution",
+        "Control Systems",
+        "Industrial Automation",
+        "Embedded Systems",
+        "Microcontroller Systems",
+        "Power System Analysis",
       ],
+      eduFinalLabel: "Tugas Akhir",
+      eduFinalProject:
+        "Centralized Logic Control Design and Fail-Safe Protection Mechanism in a Lift, Rotary, and Slider-Based Vertical Parking System.",
       eduFocus: "🎯 Minat: Control System Technology • Process Control • Automation • Industry 5.0",
     },
     experience: {
       eyebrow: "PENGALAMAN PROFESIONAL",
       title: "Magang di infrastruktur kritikal.",
       items: [
+        {
+          company: "PT. Angkasa Pura Indonesia",
+          location: "Soekarno-Hatta Airport, Tangerang",
+          period: "Jan 2025 — Feb 2025",
+          role: "Electrical Protection Engineer (Internship)",
+          points: [
+            "Magang sebagai Electrical Protection Engineer di Bandara Internasional Soekarno-Hatta, Tangerang.",
+            "Membantu maintenance & inspeksi sistem proteksi elektrik, termasuk relay, SCADA, PLC, dan fiber optic.",
+            "Membantu implementasi safety measures untuk meningkatkan standar electrical safety di tempat kerja.",
+            "Terlibat routine testing & commissioning perangkat proteksi sesuai regulasi keselamatan.",
+            "Berkolaborasi dengan teknisi senior memonitor & mengoptimalkan power distribution system; belajar membaca schematic dan relay coordination diagram.",
+          ],
+          tags: ["Relay", "SCADA", "PLC", "Fiber Optic", "Power Distribution"],
+        },
         {
           company: "PT. IAS Support Indonesia",
           location: "Tangerang City, Banten",
@@ -263,23 +325,19 @@ export const dictionaries: Record<Locale, Dict> = {
           ],
           tags: ["GIS", "Power Station", "Protection Relay", "PLC", "SCADA"],
         },
+      ],
+      orgs: [
         {
-          company: "PT. Angkasa Pura Indonesia",
-          location: "Soekarno-Hatta Airport, Tangerang",
-          period: "Jan 2025 — Feb 2025",
-          role: "Electrical Protection Engineer (Internship)",
-          points: [
-            "Maintenance & inspeksi sistem proteksi elektrik: relay, SCADA, PLC, dan fiber optic.",
-            "Routine testing & commissioning perangkat proteksi sesuai regulasi keselamatan.",
-            "Kolaborasi optimalisasi power distribution system dan membaca schematic serta relay coordination diagram.",
-          ],
-          tags: ["Relay", "SCADA", "PLC", "Fiber Optic", "Power Distribution"],
+          eyebrow: "ORGANISASI • SEP 2024 — NOV 2024",
+          title: "Electrical Tesla Event — Sponsorship Coordinator Staff",
+          body: "Menyusun strategi sponsorship, membuat proposal & paket sponsor, koordinasi dengan ketua & panitia, training tim, eksekusi kontrak & pengelolaan keuangan untuk brand identity event.",
+        },
+        {
+          eyebrow: "ORGANISASI • JAN 2025 — DES 2025",
+          title: "Biro Teknik Kontrol Otomat (TKO) — Staff Divisi Student Development",
+          body: "Mengorganisasi dan memfasilitasi technical training, workshop, dan program pengembangan skill di bidang control engineering dan automation untuk mahasiswa teknik elektro; mengoordinasikan inisiatif peningkatan kompetensi di jurusan.",
         },
       ],
-      orgEyebrow: "ORGANISASI • SEP 2024 — NOV 2024",
-      orgTitle: "Electrical Tesla Event — Sponsorship Coordinator Staff",
-      orgBody:
-        "Menyusun strategi sponsorship, membuat proposal & paket sponsor, koordinasi dengan ketua & panitia, training tim, eksekusi kontrak & pengelolaan keuangan untuk brand identity event.",
     },
     skills: {
       eyebrow: "KEAHLIAN",
@@ -291,9 +349,19 @@ export const dictionaries: Record<Locale, Dict> = {
         { title: "Non-Technical", items: ["Teamwork", "Public Speaking", "Sponsorship & Negotiation", "Event Planning"] },
       ],
     },
+    certifications: {
+      eyebrow: "SERTIFIKASI",
+      title: "Tersertifikasi & teruji.",
+      items: [
+        { icon: "🎥", title: "Automation Clinic — Motor Protection and Control", meta: "Webinar • 2024" },
+        { icon: "📜", title: "Sertifikat Magang — Electrical Protection Unit", meta: "PT. Angkasa Pura Indonesia • 2025" },
+        { icon: "📜", title: "Sertifikat Magang — Electrical Engineering Intern", meta: "PT. IAS Support Indonesia • 2026" },
+        { icon: "🌍", title: "TOEFL EPT — Skor 586/677", meta: "SEU Universitas Diponegoro • 2026" },
+      ],
+    },
     contact: {
       title: "Mari terhubung!",
-      body: "Terbuka untuk magang, proyek control/automation, dan posisi entry-level Electrical Engineering. Domisili Tangerang Selatan, bersedia onsite/hybrid.",
+      body: "Terbuka untuk posisi full-time Electrical Engineering dan proyek control/automation. Domisili Tangerang Selatan, bersedia onsite/hybrid.",
       copyright: "© 2026 Daffa Mahardika Auzan Putra",
     },
   },

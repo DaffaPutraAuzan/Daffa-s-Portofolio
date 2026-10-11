@@ -7,6 +7,7 @@ import { Rich, useLocale } from "@/components/LocaleProvider";
 import { CONTACT_EMAIL, CONTACT_LINKEDIN, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "@/lib/contact";
 
 const SKILL_ICONS = ["⚡", "🤖", "🔌", "🎤"];
+const ORG_ICONS = ["🤝", "⚙️"];
 
 function useReveal() {
   useEffect(() => {
@@ -38,6 +39,7 @@ export default function Page() {
               <a href="#about" className="hover:text-amberbrand">{t.nav.about}</a>
               <a href="#experience" className="hover:text-amberbrand">{t.nav.experience}</a>
               <a href="#skills" className="hover:text-amberbrand">{t.nav.skills}</a>
+              <a href="#certifications" className="hover:text-amberbrand">{t.nav.certifications}</a>
               <a href="#contact" className="hover:text-amberbrand">{t.nav.contact}</a>
             </div>
             <div className="flex items-center gap-2 sm:gap-3 shrink-0">
@@ -138,10 +140,17 @@ export default function Page() {
             <p className="text-xs font-extrabold tracking-[0.25em] text-amberbrand">{t.about.eduEyebrow}</p>
             <h3 className="text-xl sm:text-2xl font-extrabold mt-2">{t.about.eduSchool}</h3>
             <p className="opacity-80 text-sm mt-1">{t.about.eduMeta}</p>
-            <ul className="mt-4 space-y-3 text-[15px] leading-relaxed opacity-90 list-disc pl-5">
-              {t.about.eduPoints.map((p, i) => <li key={i}>{p}</li>)}
-            </ul>
-            <div className="mt-6 rounded-2xl bg-cream text-ink p-4 text-sm font-semibold">{t.about.eduFocus}</div>
+            <p className="mt-5 text-xs font-extrabold tracking-[0.2em] text-amberbrand/90">{t.about.eduCoursesLabel}</p>
+            <div className="mt-2 flex flex-wrap gap-2 text-[13px]">
+              {t.about.eduCourses.map((c) => (
+                <span key={c} className="rounded-full bg-white/10 px-3 py-1 font-semibold">{c}</span>
+              ))}
+            </div>
+            <div className="mt-4 rounded-2xl bg-white/10 p-4 text-sm leading-relaxed opacity-90">
+              <span className="font-extrabold text-amberbrand">{t.about.eduFinalLabel}: </span>
+              {t.about.eduFinalProject}
+            </div>
+            <div className="mt-4 rounded-2xl bg-cream text-ink p-4 text-sm font-semibold">{t.about.eduFocus}</div>
           </div>
         </div>
       </section>
@@ -169,13 +178,20 @@ export default function Page() {
             ))}
           </div>
 
-          <div className="reveal mt-4 sm:mt-6 rounded-3xl bg-amberbrand p-6 sm:p-7 shadow-card grid md:grid-cols-[1fr_auto] items-center gap-4">
-            <div>
-              <div className="text-xs font-extrabold tracking-widest">{t.experience.orgEyebrow}</div>
-              <h3 className="text-xl sm:text-2xl leading-snug font-extrabold">{t.experience.orgTitle}</h3>
-              <p className="mt-1 text-sm sm:text-base text-ink/80">{t.experience.orgBody}</p>
-            </div>
-            <div className="text-5xl sm:text-6xl md:justify-self-end">🤝</div>
+          <div className="mt-4 sm:mt-6 grid md:grid-cols-2 gap-4 sm:gap-6">
+            {t.experience.orgs.map((o, idx) => (
+              <div
+                key={o.title}
+                className={`reveal rounded-3xl p-6 sm:p-7 shadow-card ${
+                  idx % 2 ? "bg-ink text-cream" : "bg-amberbrand"
+                }`}
+              >
+                <div className="text-4xl sm:text-5xl">{ORG_ICONS[idx % ORG_ICONS.length]}</div>
+                <div className="mt-3 text-xs font-extrabold tracking-widest opacity-80">{o.eyebrow}</div>
+                <h3 className="text-xl sm:text-2xl leading-snug font-extrabold mt-1">{o.title}</h3>
+                <p className={`mt-2 text-sm sm:text-base ${idx % 2 ? "opacity-80" : "text-ink/80"}`}>{o.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -198,6 +214,23 @@ export default function Page() {
               </ul>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* CERTIFICATIONS */}
+      <section id="certifications" className="bg-sand/60 py-12 sm:py-16 scroll-mt-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-5">
+          <p className="reveal text-xs font-extrabold tracking-[0.25em] text-tealdeep">{t.certifications.eyebrow}</p>
+          <h2 className="reveal font-display text-[28px] sm:text-4xl md:text-5xl leading-tight font-bold">{t.certifications.title}</h2>
+          <div className="mt-6 sm:mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+            {t.certifications.items.map((c) => (
+              <div key={c.title} className="reveal rounded-3xl bg-white p-6 shadow-card border-t-8 border-amberbrand">
+                <div className="text-3xl">{c.icon}</div>
+                <h3 className="font-extrabold text-[15px] leading-snug mt-2">{c.title}</h3>
+                <p className="mt-2 text-xs font-bold text-tealdeep">{c.meta}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

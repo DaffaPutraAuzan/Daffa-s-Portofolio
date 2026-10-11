@@ -23,5 +23,5 @@ bun run start
 4. Klik Deploy.
 
 Foto: `public/profile.jpg` (dari WhatsApp Image). Ganti file itu saja untuk update foto.
-Data diri: edit `app/page.tsx` (experiences, skills, certificates).
+Data diri & terjemahan EN/ID: edit `lib/i18n.ts` (hero, about, experience, skills, certifications, contact).
 Kontak: `lib/contact.ts` (satu sumber data untuk email, telepon, LinkedIn).
