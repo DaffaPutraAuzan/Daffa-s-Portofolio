@@ -38,8 +38,14 @@ type Dict = {
     subject: string;
     message: string;
     submit: string;
+    sending: string;
     cancel: string;
+    close: string;
     note: string;
+    sentTitle: string;
+    sentBody: string;
+    errorBody: string;
+    rateLimited: string;
   };
   hero: {
     badge: string;
@@ -94,14 +100,20 @@ export const dictionaries: Record<Locale, Dict> = {
     },
     hire: {
       title: "Hire Me",
-      subtitle: "Fill this in and your email app will open with the message ready to send.",
+      subtitle: "Fill in this form and your message will be sent directly to my inbox.",
       name: "Your name",
       email: "Your email",
       subject: "Subject",
       message: "Message",
-      submit: "Open in email app",
+      submit: "Send message",
+      sending: "Sending…",
       cancel: "Cancel",
-      note: "Your message stays on your device until you send it.",
+      close: "Close",
+      note: "Your message goes straight to my inbox — no email app needed.",
+      sentTitle: "Message sent!",
+      sentBody: "Thanks — I'll get back to you soon.",
+      errorBody: "Something went wrong. Please try again.",
+      rateLimited: "Too many messages. Please wait a few minutes and try again.",
     },
     hero: {
       badge: "● PORTFOLIO — ELECTRICAL ENGINEERING",
@@ -192,14 +204,20 @@ export const dictionaries: Record<Locale, Dict> = {
     },
     hire: {
       title: "Hire Me",
-      subtitle: "Isi form ini, aplikasi email Anda akan terbuka dengan pesan yang sudah siap dikirim.",
+      subtitle: "Isi form ini dan pesan Anda akan langsung terkirim ke inbox saya.",
       name: "Nama Anda",
       email: "Email Anda",
       subject: "Subjek",
       message: "Pesan",
-      submit: "Buka di aplikasi email",
+      submit: "Kirim pesan",
+      sending: "Mengirim…",
       cancel: "Batal",
-      note: "Pesan Anda tetap di perangkat ini sampai Anda mengirimnya.",
+      close: "Tutup",
+      note: "Pesan langsung masuk ke inbox saya — tanpa perlu aplikasi email.",
+      sentTitle: "Pesan terkirim!",
+      sentBody: "Terima kasih — saya akan segera membalas.",
+      errorBody: "Terjadi kesalahan. Silakan coba lagi.",
+      rateLimited: "Terlalu banyak pesan. Tunggu beberapa menit lalu coba lagi.",
     },
     hero: {
       badge: "● PORTOFOLIO — TEKNIK ELEKTRO",
