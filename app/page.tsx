@@ -38,6 +38,7 @@ export default function Page() {
             <div className="hidden md:flex gap-6 text-sm font-medium">
               <a href="#about" className="hover:text-amberbrand">{t.nav.about}</a>
               <a href="#experience" className="hover:text-amberbrand">{t.nav.experience}</a>
+              <a href="#projects" className="hover:text-amberbrand">{t.nav.projects}</a>
               <a href="#skills" className="hover:text-amberbrand">{t.nav.skills}</a>
               <a href="#certifications" className="hover:text-amberbrand">{t.nav.certifications}</a>
               <a href="#contact" className="hover:text-amberbrand">{t.nav.contact}</a>
@@ -222,6 +223,81 @@ export default function Page() {
         </div>
       </section>
 
+
+      {/* FEATURED PROJECTS */}
+      <section id="projects" className="mx-auto max-w-6xl px-4 sm:px-5 py-12 sm:py-16 scroll-mt-24">
+        <p className="reveal text-xs font-extrabold tracking-[0.25em] text-tealdeep">{t.projects.eyebrow}</p>
+        <h2 className="reveal font-display text-[28px] sm:text-4xl md:text-5xl leading-tight font-bold">{t.projects.title}</h2>
+
+        <article className="reveal mt-6 sm:mt-8 relative overflow-hidden rounded-3xl bg-ink text-cream p-6 sm:p-8 shadow-card border-t-8 border-amberbrand">
+          <div aria-hidden="true" className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-amberbrand/10 blur-2xl" />
+          <div className="relative">
+            <span className="inline-flex items-center gap-2 rounded-full bg-amberbrand/10 text-amberbrand border border-amberbrand/30 px-3 py-1.5 text-[11px] sm:text-xs font-bold tracking-wide">
+              <svg aria-hidden="true" className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z" />
+              </svg>
+              {t.projects.category}
+            </span>
+
+            <h3 className="mt-4 font-extrabold text-lg sm:text-2xl leading-snug">{t.projects.title}</h3>
+            <p className="mt-3 text-sm sm:text-base leading-relaxed opacity-80 max-w-3xl">{t.projects.description}</p>
+
+            <ul className="mt-5 space-y-2 text-sm sm:text-[15px] opacity-90 list-disc pl-5">
+              {t.projects.highlights.map((h, i) => (
+                <li key={i}>{h}</li>
+              ))}
+            </ul>
+
+            <div className="mt-5 flex flex-wrap gap-2">
+              {t.projects.tags.map((tag) => (
+                <span key={tag} className="text-[11px] sm:text-xs font-bold rounded-full bg-white/10 border border-white/10 px-3 py-1">{tag}</span>
+              ))}
+            </div>
+
+            <div className="mt-6 flex flex-col sm:flex-row flex-wrap gap-3">
+              <a
+                href="https://drive.google.com/file/d/1cUsF8dE_WAQ8nk1ikc1dDKFBPyH4st4f/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-cream text-ink px-5 sm:px-6 py-3 text-sm sm:text-base font-bold hover:bg-amberbrand transition-colors"
+              >
+                <svg aria-hidden="true" className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                  <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                  <path d="M9 15h6" />
+                  <path d="M9 18h3" />
+                </svg>
+                {t.projects.viewPaper}
+              </a>
+            </div>
+
+            <div className="mt-6 pt-5 border-t border-white/10">
+              <div className="text-xs font-bold tracking-[0.15em] text-cream/60 uppercase">{t.projects.docsLabel}</div>
+              <div className="mt-3 grid sm:grid-cols-3 gap-2">
+                {t.projects.docs.map((d) => (
+                  <a
+                    key={d.url}
+                    href={d.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-xs sm:text-[13px] font-semibold hover:bg-white/10 hover:border-amberbrand/40 transition-colors"
+                  >
+                    <svg aria-hidden="true" className="w-4 h-4 shrink-0 text-amberbrand" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z" />
+                    </svg>
+                    <span className="min-w-0">{d.label}</span>
+                    <svg aria-hidden="true" className="w-3.5 h-3.5 shrink-0 ml-auto opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M15 3h6v6" />
+                      <path d="M10 14 21 3" />
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    </svg>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
       {/* SKILLS */}
       <section id="skills" className="mx-auto max-w-6xl px-4 sm:px-5 py-12 sm:py-16 scroll-mt-24">
         <p className="reveal text-xs font-extrabold tracking-[0.25em] text-tealdeep">{t.skills.eyebrow}</p>

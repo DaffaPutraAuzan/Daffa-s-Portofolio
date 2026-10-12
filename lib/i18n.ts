@@ -45,7 +45,18 @@ export type Certificate = {
 };
 
 type Dict = {
-  nav: { about: string; experience: string; skills: string; certifications: string; contact: string; hire: string };
+  nav: { about: string; experience: string; projects: string; skills: string; certifications: string; contact: string; hire: string };
+  projects: {
+    eyebrow: string;
+    category: string;
+    title: string;
+    description: string;
+    highlights: string[];
+    tags: string[];
+    viewPaper: string;
+    docsLabel: string;
+    docs: { label: string; url: string }[];
+  };
   hire: {
     title: string;
     subtitle: string;
@@ -123,6 +134,7 @@ export const dictionaries: Record<Locale, Dict> = {
     nav: {
       about: "About",
       experience: "Experience",
+      projects: "Projects",
       skills: "Skills",
       certifications: "Certifications",
       contact: "Contact",
@@ -252,6 +264,26 @@ export const dictionaries: Record<Locale, Dict> = {
         },
       ],
     },
+
+    projects: {
+      eyebrow: "FEATURED PROJECTS",
+      category: "Tugas Akhir S1 • System Control & Protection",
+      title: "Design of Centralized Logic Control and Fail-Safe Protection Mechanism in Automatic Vertical Parking System Model for Four-Wheel Vehicles Based On Lift, Rotary, and Slider",
+      description: "Design and implementation of centralized logic control based on Finite State Machine (FSM) and fail-safe protection mechanisms in an automatic vertical parking system model. Integrates lift, rotary, and slider motion control with sensor interlocking protection to prevent mechanical collisions and system failures.",
+      highlights: [
+        "Centralized Logic Control Design & FSM State Architecture.",
+        "Fail-Safe Protection Mechanism & Multi-Sensor Interlocking Logic.",
+        "Actuator Integration for Lift, Rotary, and Slider Motion Sequencing.",
+      ],
+      tags: ["PLC", "Centralized Control", "Fail-Safe Protection", "Finite State Machine (FSM)", "SolidWorks 3D", "Sensor Interlocking"],
+      viewPaper: "View TA Paper (PDF)",
+      docsLabel: "Documentation",
+      docs: [
+        { label: "Desain 3D SolidWorks", url: "https://drive.google.com/drive/folders/1QSlIS7v1l5JJIOFjl39fm2gF9rVtKofn?usp=sharing" },
+        { label: "Realisasi Alat (Hardware)", url: "https://drive.google.com/drive/folders/1r1ZeqExLR4PYAVsbj9y6pwConl_A-LFr?usp=sharing" },
+        { label: "Diagram Blok & FSM State", url: "https://drive.google.com/drive/folders/1v1mP52VJlDv7aJ67QMAE_2spfWttRXNX?usp=sharing" },
+      ],
+    },
     skills: {
       eyebrow: "SKILLS",
       title: "Technical Expertise & Core Competencies",
@@ -327,6 +359,7 @@ export const dictionaries: Record<Locale, Dict> = {
     nav: {
       about: "Tentang",
       experience: "Pengalaman",
+      projects: "Proyek",
       skills: "Keterampilan",
       certifications: "Sertifikasi & Lisensi",
       contact: "Kontak",
@@ -454,6 +487,25 @@ export const dictionaries: Record<Locale, Dict> = {
           tags: ["TOEFL", "Bahasa Inggris Teknis"],
           credentialLink: "https://drive.google.com/file/d/1cD3ztY3-uqw7xrXPNtw1Ia5YfdpA-ENs/view?usp=sharing",
         },
+      ],
+    },
+    projects: {
+      eyebrow: "PROYEK UNGGULAN",
+      category: "Tugas Akhir S1 • System Control & Protection",
+      title: "Design of Centralized Logic Control and Fail-Safe Protection Mechanism in Automatic Vertical Parking System Model for Four-Wheel Vehicles Based On Lift, Rotary, and Slider",
+      description: "Perancangan dan implementasi logika kontrol terpusat berbasis Finite State Machine (FSM) serta mekanisme perlindungan fail-safe pada model sistem parkir vertikal otomatis. Mengintegrasikan kontrol gerak lift, rotary, dan slider dengan proteksi interlocking sensor untuk mencegah benturan mekanis dan kegagalan sistem.",
+      highlights: [
+        "Centralized Logic Control Design & FSM State Architecture.",
+        "Fail-Safe Protection Mechanism & Multi-Sensor Interlocking Logic.",
+        "Actuator Integration for Lift, Rotary, and Slider Motion Sequencing.",
+      ],
+      tags: ["PLC", "Centralized Control", "Fail-Safe Protection", "Finite State Machine (FSM)", "SolidWorks 3D", "Sensor Interlocking"],
+      viewPaper: "Baca Makalah TA (PDF)",
+      docsLabel: "Dokumentasi",
+      docs: [
+        { label: "Desain 3D SolidWorks", url: "https://drive.google.com/drive/folders/1QSlIS7v1l5JJIOFjl39fm2gF9rVtKofn?usp=sharing" },
+        { label: "Realisasi Alat (Hardware)", url: "https://drive.google.com/drive/folders/1r1ZeqExLR4PYAVsbj9y6pwConl_A-LFr?usp=sharing" },
+        { label: "Diagram Blok & FSM State", url: "https://drive.google.com/drive/folders/1v1mP52VJlDv7aJ67QMAE_2spfWttRXNX?usp=sharing" },
       ],
     },
     skills: {
