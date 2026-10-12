@@ -84,7 +84,7 @@ export default function Page() {
               </a>
             </div>
             <div className="mt-8 grid grid-cols-3 max-w-md gap-2 sm:gap-3">
-              {[["2", t.hero.stats[0]], ["3.26", t.hero.stats[1]], ["4", t.hero.stats[2]]].map(([n, l]) => (
+              {[["2", t.hero.stats[0]], ["3.26", t.hero.stats[1]], ["3", t.hero.stats[2]]].map(([n, l]) => (
                 <div key={n} className="rounded-2xl bg-white p-3 sm:p-4 text-center shadow-card">
                   <div className="text-xl sm:text-2xl font-extrabold">{n}</div>
                   <div className="text-[10px] sm:text-[11px] whitespace-pre-line text-ink/70 font-medium">{l}</div>
