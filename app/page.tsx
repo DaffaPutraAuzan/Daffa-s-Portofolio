@@ -63,15 +63,20 @@ export default function Page() {
             <p className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-full bg-ink px-3 sm:px-4 py-1.5 text-[10px] sm:text-[12px] font-bold tracking-[0.15em] sm:tracking-[0.2em] text-cream">
               {t.hero.badge}
             </p>
-            <h1 className="mt-5 font-display text-[40px] sm:text-5xl md:text-7xl leading-[1.02] md:leading-[0.95] font-extrabold">
+            <h1 className="mt-5 font-display text-[40px] sm:text-5xl md:text-7xl leading-[1.02] md:leading-[0.95] font-extrabold tracking-tight">
               DAFFA<br />MAHARDIKA<br />
-              <span className="italic font-semibold text-tealdeep">Auzan Putra</span>
+              <span className="text-tealdeep">AUZAN PUTRA</span>
             </h1>
             <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-ink/80">
               <Rich text={t.hero.lead} />
             </p>
             <div className="mt-6 flex flex-col sm:flex-row sm:flex-wrap gap-3">
-              <a href="/CV_ATS.pdf" target="_blank" rel="noopener noreferrer" className="rounded-full bg-ink px-6 py-3 font-bold text-center text-cream hover:bg-tealdeep">
+              <a href="/CV_ATS.pdf" target="_blank" rel="noopener noreferrer" className="rounded-full bg-ink px-6 py-3 font-bold text-center text-cream hover:bg-tealdeep inline-flex items-center justify-center gap-2">
+                <svg aria-hidden="true" className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" x2="12" y1="15" y2="3" />
+                </svg>
                 {t.hero.cta}
               </a>
               <a href={CONTACT_LINKEDIN} target="_blank" rel="noreferrer" className="rounded-full border-2 border-ink px-6 py-3 font-bold text-center hover:bg-ink hover:text-cream">
@@ -90,6 +95,7 @@ export default function Page() {
 
           <div className="relative reveal visible mt-2 md:mt-0">
             <div className="relative">
+              <div aria-hidden="true" className="bg-amber-500/10 blur-3xl w-72 h-72 rounded-full absolute -z-10 -top-12 -right-12 pointer-events-none" />
               <div className="absolute z-10 top-3 left-3 sm:-top-6 sm:-left-6 rounded-2xl bg-amberbrand px-3 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base font-bold rotate-[-6deg] shadow-card">
                 {t.hero.photoTopBadge}
               </div>

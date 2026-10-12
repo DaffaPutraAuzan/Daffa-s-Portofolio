@@ -147,7 +147,7 @@ export const dictionaries: Record<Locale, Dict> = {
     },
     hero: {
       badge: "● PORTFOLIO — ELECTRICAL ENGINEERING",
-      lead: "Fresh graduate in Electrical Engineering from **Universitas Diponegoro",
+      lead: "Electrical Engineering Graduate from Diponegoro University (2022–2026) focusing on Control Systems, Industrial Automation, and Power System Protection.",
       cta: "View Full ATS CV",
       stats: ["Internships", "GPA 4.00", "Certifications"],
       photoTopBadge: "Control System",
@@ -330,10 +330,10 @@ export const dictionaries: Record<Locale, Dict> = {
       skills: "Keterampilan",
       certifications: "Sertifikasi & Lisensi",
       contact: "Kontak",
-      hire: "Sewa Saya",
+      hire: "Rekrut Saya",
     },
     hire: {
-      title: "Sewa Saya",
+      title: "Rekrut Saya",
       subtitle: "Isi formulir ini dan pesan akan langsung dikirim ke inbox saya.",
       name: "Nama Anda",
       email: "Email Anda",
@@ -351,7 +351,7 @@ export const dictionaries: Record<Locale, Dict> = {
     },
     hero: {
       badge: "● PORTFOLIO — TEKNIK ELEKTRO",
-      lead: "Sarjana Baru Teknik Elektro dari **Universitas Diponegoro",
+      lead: "Lulusan S1 Teknik Elektro Universitas Diponegoro (2022–2026) dengan fokus pada Sistem Kontrol, Otomasi Industri, dan Proteksi Tenaga Listrik.",
       cta: "Lihat CV ATS Lengkap",
       stats: ["Magang", "IPK 4.00", "Sertifikasi"],
       photoTopBadge: "Control System",
