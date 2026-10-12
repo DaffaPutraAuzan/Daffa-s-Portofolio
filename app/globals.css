@@ -23,3 +23,105 @@ body { @apply bg-cream text-ink font-sans antialiased; }
 
 @keyframes floaty { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-12px) } }
 .floaty { animation: floaty 6s ease-in-out infinite; }
+
+/* ============================================================
+   PRINT / PDF EXPORT  (Ctrl + P)
+   ============================================================ */
+@page { size: A4; margin: 15mm; }
+
+@media print {
+  /* Keep backgrounds & text colors in the exported PDF. */
+  html,
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    background: #FAF5EC !important;
+    color: #0F2A44 !important;
+  }
+
+  /* Hide interactive chrome. */
+  header,
+  nav,
+  .marquee-track,
+  [role="dialog"],
+  button {
+    display: none !important;
+  }
+
+  /* Drop the decorative glow blobs / gradients. */
+  [aria-hidden="true"] {
+    display: none !important;
+  }
+
+  /* Sections may not have been scrolled into view yet, so
+     .reveal would still be opacity:0 — force everything visible. */
+  .reveal,
+  .reveal.visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Kill animations for a stable, non-janky export. */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Layout: full width, no horizontal scroll, sensible rhythm. */
+  main {
+    overflow: visible !important;
+  }
+  section {
+    padding-top: 8mm !important;
+    padding-bottom: 8mm !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .max-w-6xl {
+    max-width: 100% !important;
+  }
+
+  /* Keep cards from being sliced across a page break. */
+  article,
+  #experience article,
+  #certifications article,
+  #projects article,
+  #skills article,
+  figure,
+  .shadow-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Headings should never be orphaned at the bottom of a page. */
+  h1, h2, h3, h4 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Photos: never break across pages, print at their own size. */
+  img {
+    max-width: 100% !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Links: show the URL so a printed CV is still actionable. */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #0E5A5A;
+    word-break: break-all;
+  }
+
+  /* Hide purely decorative pseudo-elements. */
+  .grain::before {
+    display: none !important;
+  }
+}
