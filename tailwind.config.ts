@@ -17,8 +17,8 @@ const config: Config = {
         mutedblue: "#DCE6F2",
       },
       fontFamily: {
-        display: ["'Playfair Display'", "serif"],
-        sans: ["'Plus Jakarta Sans'", "system-ui", "sans-serif"],
+        display: ["var(--font-playfair)", "Georgia", "serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       boxShadow: {
         card: "0 20px 50px -20px rgba(16,42,67,.25)",
