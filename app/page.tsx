@@ -203,12 +203,14 @@ export default function Page() {
         <h2 className="reveal font-display text-[28px] sm:text-4xl md:text-5xl leading-tight font-bold">{t.skills.title}</h2>
         <div className="mt-6 sm:mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {(t.skills?.groups || []).map((group: any, idx: number) => (
-            <div key={group.title} className={`reveal rounded-3xl p-6 shadow-card ${idx % 2 ? "bg-ink text-cream" : "bg-white"}`}>
-              <h3 className="font-extrabold text-lg mt-2">{group.title}</h3>
-              <ul className="mt-3 space-y-2 text-sm opacity-90">
-                {group.items.map((it: any) => (
-                  <li key={it} className={`rounded-xl px-3 py-2 font-medium ${idx % 2 ? "bg-white/10" : "bg-black/5"}`}>
-                    ✓ {it}
+            <div key={idx} className={`reveal rounded-3xl p-6 shadow-card ${idx % 2 ? "bg-ink text-cream" : "bg-white"}`}>
+              <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                {group.title}
+              </h3>
+              <ul className="space-y-2">
+                {(group.items || []).map((item: string, itemIdx: number) => (
+                  <li key={itemIdx} className={`text-sm flex items-center gap-2 rounded-xl px-3 py-2 font-medium ${idx % 2 ? "bg-white/10 text-cream/90" : "bg-black/5 text-ink/80"}`}>
+                    <span className="text-amberbrand">✓</span> {item}
                   </li>
                 ))}
               </ul>
