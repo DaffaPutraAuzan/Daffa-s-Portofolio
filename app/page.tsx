@@ -170,18 +170,21 @@ export default function Page() {
                   {e.points.map((p, i) => <li key={i}>{p}</li>)}
                 </ul>
                 {(e.photos || []).length > 0 && (
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
-                    {(e.photos || []).map((p, i) => (
-                      <figure key={i} className="group">
+                  <div className="grid grid-cols-2 gap-3 mt-4">
+                    {(e.photos || []).map((photo, i) => (
+                      <div key={i} className="relative group overflow-hidden rounded-xl aspect-[4/3] bg-sand/10 border border-sand/20">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                          src={p.src}
-                          alt={p.caption}
+                          src={photo.src}
+                          alt={photo.caption}
                           loading="lazy"
-                          className="aspect-[4/3] w-full object-cover rounded-xl border border-ink/10 shadow-sm transition-transform duration-200 hover:scale-105"
+                          referrerPolicy="no-referrer"
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                         />
-                        <figcaption className="mt-1.5 text-[11px] leading-snug text-ink/60">{p.caption}</figcaption>
-                      </figure>
+                        <div className="absolute inset-x-0 bottom-0 p-2 bg-gradient-to-t from-black/80 to-transparent text-white text-[11px] leading-tight opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                          {photo.caption}
+                        </div>
+                      </div>
                     ))}
                   </div>
                 )}
