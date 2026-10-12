@@ -50,7 +50,7 @@ export default function Page() {
     <main className="min-h-screen overflow-x-clip">
       {/* NAVBAR */}
       <header className="fixed top-0 inset-x-0 z-50">
-        <div className="mx-auto max-w-6xl px-4">
+        <div className="mx-auto max-w-6xl px-4 sm:px-5 lg:px-8">
           <nav className="mt-3 sm:mt-4 flex items-center justify-between gap-2 sm:gap-3 rounded-2xl bg-ink/95 backdrop-blur px-3 sm:px-5 py-3 text-cream shadow-card">
             <a href="#home" className="font-extrabold tracking-tight shrink-0">
               DAFFA<span className="text-amberbrand"> • MAP</span>
@@ -124,12 +124,12 @@ export default function Page() {
 
       {/* HERO - Canva style */}
       <section id="home" className="relative grain pt-28 sm:pt-32 pb-10 bg-cream">
-        <div className="mx-auto max-w-6xl px-4 sm:px-5 grid md:grid-cols-[1.15fr_.85fr] gap-8 md:gap-10 items-center">
+        <div className="mx-auto max-w-6xl px-4 sm:px-5 lg:px-8 grid md:grid-cols-[1.15fr_.85fr] gap-8 md:gap-10 items-center">
           <div className="reveal visible">
             <p className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-full bg-ink px-3 sm:px-4 py-1.5 text-[10px] sm:text-[12px] font-bold tracking-[0.15em] sm:tracking-[0.2em] text-cream">
               {t.hero.badge}
             </p>
-            <h1 className="mt-5 font-display text-[40px] sm:text-5xl md:text-7xl leading-[1.02] md:leading-[0.95] font-extrabold tracking-tight">
+            <h1 className="mt-5 font-display text-[34px] sm:text-5xl md:text-7xl leading-[1.04] md:leading-[0.95] font-extrabold tracking-tight">
               DAFFA<br />MAHARDIKA<br />
               <span className="text-tealdeep">AUZAN PUTRA</span>
             </h1>
@@ -149,7 +149,7 @@ export default function Page() {
                 LinkedIn ↗
               </a>
             </div>
-            <div className="mt-8 grid grid-cols-3 max-w-md gap-2 sm:gap-3">
+            <div className="mt-8 grid grid-cols-3 max-w-md gap-1.5 sm:gap-3">
               {[["2", t.hero.stats[0]], ["3.26", t.hero.stats[1]], ["3", t.hero.stats[2]]].map(([n, l]) => (
                 <div key={n} className="rounded-2xl bg-white p-3 sm:p-4 text-center shadow-card">
                   <div className="text-xl sm:text-2xl font-extrabold">{n}</div>
@@ -194,8 +194,8 @@ export default function Page() {
       </div>
 
       {/* ABOUT */}
-      <section id="about" className="mx-auto max-w-6xl px-4 sm:px-5 py-12 sm:py-16 scroll-mt-24">
-        <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+      <section id="about" className="mx-auto max-w-6xl px-4 sm:px-5 lg:px-8 py-12 sm:py-16 scroll-mt-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           <div className="reveal rounded-3xl bg-white p-6 sm:p-8 shadow-card">
             <p className="text-xs font-extrabold tracking-[0.25em] text-tealdeep">{t.about.eyebrow}</p>
             <h2 className="font-display text-[28px] sm:text-4xl leading-tight font-bold mt-2">{t.about.title}</h2>
@@ -229,10 +229,10 @@ export default function Page() {
 
       {/* EXPERIENCE */}
       <section id="experience" className="bg-sand/60 py-12 sm:py-16 scroll-mt-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-5">
+        <div className="mx-auto max-w-6xl px-4 sm:px-5 lg:px-8">
           <p className="reveal text-xs font-extrabold tracking-[0.25em] text-tealdeep">{t.experience.eyebrow}</p>
           <h2 className="reveal font-display text-[28px] sm:text-4xl md:text-5xl leading-tight font-bold">{t.experience.title}</h2>
-          <div className="mt-6 sm:mt-8 grid md:grid-cols-2 gap-4 sm:gap-6">
+          <div className="mt-6 sm:mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {t.experience.items.map((e) => (
               <article key={e.id} className="reveal rounded-3xl bg-white p-6 sm:p-7 shadow-card border-t-8 border-ink">
                 <div className="text-xs font-bold text-tealdeep">{e.period} • {e.location}</div>
@@ -242,7 +242,7 @@ export default function Page() {
                   {e.points.map((p, i) => <li key={i}>{p}</li>)}
                 </ul>
                 {(e.photos || []).length > 0 && (
-                  <div className="grid grid-cols-2 gap-3 mt-4">
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3 mt-4">
                     {(e.photos || []).map((photo, i) => (
                       <div key={i} className="relative group overflow-hidden rounded-xl aspect-[4/3] bg-sand/10 border border-sand/20">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -290,7 +290,7 @@ export default function Page() {
 
 
       {/* FEATURED PROJECTS */}
-      <section id="projects" className="mx-auto max-w-6xl px-4 sm:px-5 py-12 sm:py-16 scroll-mt-24">
+      <section id="projects" className="mx-auto max-w-6xl px-4 sm:px-5 lg:px-8 py-12 sm:py-16 scroll-mt-24">
         <p className="reveal text-xs font-extrabold tracking-[0.25em] text-tealdeep">{t.projects.eyebrow}</p>
         <h2 className="reveal font-display text-[28px] sm:text-4xl md:text-5xl leading-tight font-bold">{t.projects.sectionTitle}</h2>
 
@@ -338,7 +338,7 @@ export default function Page() {
 
             <div className="mt-6 pt-5 border-t border-white/10">
               <div className="text-xs font-bold tracking-[0.15em] text-cream/60 uppercase">{t.projects.docsLabel}</div>
-              <div className="mt-3 grid sm:grid-cols-3 gap-2">
+              <div className="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-2">
                 {t.projects.docs.map((d) => (
                   <a
                     key={d.url}
@@ -364,10 +364,10 @@ export default function Page() {
         </article>
       </section>
       {/* SKILLS */}
-      <section id="skills" className="mx-auto max-w-6xl px-4 sm:px-5 py-12 sm:py-16 scroll-mt-24">
+      <section id="skills" className="mx-auto max-w-6xl px-4 sm:px-5 lg:px-8 py-12 sm:py-16 scroll-mt-24">
         <p className="reveal text-xs font-extrabold tracking-[0.25em] text-tealdeep">{t.skills.eyebrow}</p>
         <h2 className="reveal font-display text-[28px] sm:text-4xl md:text-5xl leading-tight font-bold">{t.skills.title}</h2>
-        <div className="mt-6 sm:mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        <div className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {(t.skills?.groups || []).map((group: any, idx: number) => (
             <div key={idx} className={`reveal rounded-3xl p-6 shadow-card ${idx % 2 ? "bg-ink text-cream" : "bg-white"}`}>
               <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
@@ -387,7 +387,7 @@ export default function Page() {
 
       {/* CERTIFICATIONS */}
       <section id="certifications" className="bg-sand/60 py-12 sm:py-16 scroll-mt-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-5">
+        <div className="mx-auto max-w-6xl px-4 sm:px-5 lg:px-8">
           <p className="reveal text-xs font-extrabold tracking-[0.25em] text-tealdeep">{t.certifications.eyebrow}</p>
           <h2 className="reveal font-display text-[28px] sm:text-4xl md:text-5xl leading-tight font-bold">{t.certifications.title}</h2>
           <div className="mt-6 sm:mt-8 space-y-4 sm:space-y-5">
@@ -409,7 +409,7 @@ export default function Page() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="mx-auto max-w-6xl px-4 sm:px-5 pb-16 sm:pb-20 scroll-mt-24">
+      <section id="contact" className="mx-auto max-w-6xl px-4 sm:px-5 lg:px-8 pb-16 sm:pb-20 scroll-mt-24">
         <div className="reveal rounded-[1.5rem] sm:rounded-[2rem] bg-ink text-cream p-6 sm:p-10 text-center shadow-card relative overflow-hidden">
           <div aria-hidden="true" className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-amberbrand/10 blur-2xl" />
           <div aria-hidden="true" className="pointer-events-none absolute -bottom-28 -right-20 h-80 w-80 rounded-full bg-tealdeep/20 blur-2xl" />
