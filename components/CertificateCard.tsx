@@ -51,7 +51,21 @@ export default function CertificateCard({ cert, t, showIssuerLogo = true, compac
         {/* Issuer Logo */}
         {showIssuerLogo && (
           <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-cream border border-ink/10">
-            <span className="text-2xl sm:text-3xl" aria-hidden="true">{cert.issuerLogo}</span>
+            {cert.issuerLogo?.startsWith('svg:') ? (
+              <div className="w-full h-full rounded-md">
+                <span
+                  dangerouslySetInnerHTML={{ __html: cert.issuerLogo!.replace('svg:', '') }}
+                />
+              </div>
+            ) : cert.issuerLogo?.startsWith('/logos/') ? (
+              <img
+                src={cert.issuerLogo}
+                alt={cert.issuer}
+                className="w-full h-full rounded-md object-cover"
+              />
+            ) : (
+              <span className="text-2xl sm:text-3xl" aria-hidden="true">{cert.issuerLogo}</span>
+            )}
           </div>
         )}
 

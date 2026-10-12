@@ -5,16 +5,8 @@ import HireModal from "@/components/HireModal";
 import CertificateCard from "@/components/CertificateCard";
 import LocaleSwitch from "@/components/LocaleSwitch";
 import { Rich, useLocale } from "@/components/LocaleProvider";
-import { CONTACT_EMAIL, CONTACT_LINKEDIN, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "@/lib/contact";
+import { CONTACT_LINKEDIN } from "@/lib/contact";
 
-const SKILL_ICONS = ["⚡", "🤖", "🔌", "🎤"];
-const ORG_ICONS = ["🤝", "⚙️"];
-
-// Credential links for experience cards
-const EXPERIENCE_CREDENTIAL_LINKS: Record<string, string> = {
-  "PT. Angkasa Pura Indonesia": "https://drive.google.com/file/d/1OAHo-ZRn1H6bChjrGkaKZ-wKDX9n_Qs6/view?usp=sharing",
-  "PT. IAS Support Indonesia": "https://drive.google.com/file/d/1GucV3PzdbTDS_zah5Xy3i50m-VbS6lE9/view?usp=sharing",
-};
 
 function useReveal() {
   useEffect(() => {
@@ -40,7 +32,7 @@ export default function Page() {
         <div className="mx-auto max-w-6xl px-4">
           <nav className="mt-3 sm:mt-4 flex items-center justify-between gap-2 sm:gap-3 rounded-2xl bg-ink/95 backdrop-blur px-3 sm:px-5 py-3 text-cream shadow-card">
             <a href="#home" className="font-extrabold tracking-tight shrink-0">
-              DAFFA<span className="text-amberbrand">·MAP</span>
+              DAFFA<span className="text-amberbrand"> • MAP</span>
             </a>
             <div className="hidden md:flex gap-6 text-sm font-medium">
               <a href="#about" className="hover:text-amberbrand">{t.nav.about}</a>
@@ -78,7 +70,7 @@ export default function Page() {
               <Rich text={t.hero.lead} />
             </p>
             <div className="mt-6 flex flex-col sm:flex-row sm:flex-wrap gap-3">
-              <a href="#experience" className="rounded-full bg-ink px-6 py-3 font-bold text-center text-cream hover:bg-tealdeep">
+              <a href="/CV_ATS.pdf" target="_blank" rel="noopener noreferrer" className="rounded-full bg-ink px-6 py-3 font-bold text-center text-cream hover:bg-tealdeep">
                 {t.hero.cta}
               </a>
               <a href={CONTACT_LINKEDIN} target="_blank" rel="noreferrer" className="rounded-full border-2 border-ink px-6 py-3 font-bold text-center hover:bg-ink hover:text-cream">
@@ -113,7 +105,7 @@ export default function Page() {
                 <div className="font-bold text-sm sm:text-base truncate">{t.hero.location}</div>
                 <div className="text-xs sm:text-sm opacity-80">{t.hero.locationSub}</div>
               </div>
-              <div className="text-3xl shrink-0">◎</div>
+              <div className="text-3xl shrink-0">📍</div>
             </div>
           </div>
         </div>
@@ -168,54 +160,37 @@ export default function Page() {
           <p className="reveal text-xs font-extrabold tracking-[0.25em] text-tealdeep">{t.experience.eyebrow}</p>
           <h2 className="reveal font-display text-[28px] sm:text-4xl md:text-5xl leading-tight font-bold">{t.experience.title}</h2>
           <div className="mt-6 sm:mt-8 grid md:grid-cols-2 gap-4 sm:gap-6">
-            {t.experience.items.map((e) => {
-              const credentialLink = EXPERIENCE_CREDENTIAL_LINKS[e.company];
-              return (
-                <article key={e.company} className="reveal rounded-3xl bg-white p-6 sm:p-7 shadow-card border-t-8 border-ink">
-                  <div className="text-xs font-bold text-tealdeep">{e.period} • {e.location}</div>
-                  <h3 className="text-xl font-extrabold mt-1">{e.company}</h3>
-                  <div className="inline-block mt-2 rounded-full bg-ink text-cream px-3 py-1 text-xs font-bold">{e.role}</div>
-                  <ul className="mt-4 space-y-2 text-[15px] text-ink/80 list-disc pl-5">
-                    {e.points.map((p, i) => <li key={i}>{p}</li>)}
-                  </ul>
+            {t.experience.items.map((e) => (
+              <article key={e.id} className="reveal rounded-3xl bg-white p-6 sm:p-7 shadow-card border-t-8 border-ink">
+                <div className="text-xs font-bold text-tealdeep">{e.period} • {e.location}</div>
+                <h3 className="text-xl font-extrabold mt-1">{e.company}</h3>
+                <div className="inline-block mt-2 rounded-full bg-ink text-cream px-3 py-1 text-xs font-bold">{e.role}</div>
+                <ul className="mt-4 space-y-2 text-[15px] text-ink/80 list-disc pl-5">
+                  {e.points.map((p, i) => <li key={i}>{p}</li>)}
+                </ul>
+                {e.tags.length > 0 && (
                   <div className="mt-4 flex flex-wrap gap-2">
                     {e.tags.map((tag) => (
                       <span key={tag} className="text-xs font-bold rounded-full bg-mutedblue px-3 py-1">{tag}</span>
                     ))}
                   </div>
-                  {credentialLink && (
-                    <div className="mt-4 pt-3 border-t border-ink/5">
-                      <a
-                        href={credentialLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-4 py-2 text-[12px] font-semibold text-ink/70 border border-ink/15 rounded-full hover:border-tealdeep hover:text-tealdeep hover:bg-tealdeep/5 transition-all"
-                      >
-                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                        </svg>
-                        Show credential ↗
-                      </a>
-                    </div>
-                  )}
-                </article>
-              );
-            })}
-          </div>
-
-          <div className="mt-4 sm:mt-6 grid md:grid-cols-2 gap-4 sm:gap-6">
-            {t.experience.orgs.map((o, idx) => (
-              <div
-                key={o.title}
-                className={`reveal rounded-3xl p-6 sm:p-7 shadow-card ${
-                  idx % 2 ? "bg-ink text-cream" : "bg-amberbrand"
-                }`}
-              >
-                <div className="text-4xl sm:text-5xl">{ORG_ICONS[idx % ORG_ICONS.length]}</div>
-                <div className="mt-3 text-xs font-extrabold tracking-widest opacity-80">{o.eyebrow}</div>
-                <h3 className="text-xl sm:text-2xl leading-snug font-extrabold mt-1">{o.title}</h3>
-                <p className={`mt-2 text-sm sm:text-base ${idx % 2 ? "opacity-80" : "text-ink/80"}`}>{o.body}</p>
-              </div>
+                )}
+                {e.credentialLink && (
+                  <div className="mt-4 pt-3 border-t border-ink/5">
+                    <a
+                      href={e.credentialLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 text-[12px] font-semibold text-ink/70 border border-ink/15 rounded-full hover:border-tealdeep hover:text-tealdeep hover:bg-tealdeep/5 transition-all"
+                    >
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                      </svg>
+                      {t.certifications.showCredential}
+                    </a>
+                  </div>
+                )}
+              </article>
             ))}
           </div>
         </div>
@@ -228,7 +203,6 @@ export default function Page() {
         <div className="mt-6 sm:mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {t.skills.groups.map((s, idx) => (
             <div key={s.title} className={`reveal rounded-3xl p-6 shadow-card ${idx % 2 ? "bg-ink text-cream" : "bg-white"}`}>
-              <div className="text-3xl">{SKILL_ICONS[idx]}</div>
               <h3 className="font-extrabold text-lg mt-2">{s.title}</h3>
               <ul className="mt-3 space-y-2 text-sm opacity-90">
                 {s.items.map((it) => (
@@ -271,11 +245,11 @@ export default function Page() {
           <h2 className="font-display text-[32px] sm:text-4xl md:text-6xl leading-tight font-bold">{t.contact.title}</h2>
           <p className="mt-3 text-sm sm:text-base opacity-80 max-w-2xl mx-auto">{t.contact.body}</p>
           <div className="mt-6 sm:mt-7 flex flex-col sm:flex-row flex-wrap justify-center items-stretch sm:items-center gap-3 font-bold">
-            <a href={`mailto:${CONTACT_EMAIL}`} className="rounded-full bg-cream text-ink px-5 sm:px-6 py-3 text-sm sm:text-base break-all">
-              ✉️ {CONTACT_EMAIL}
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=daffa.mahardikazan@gmail.com" target="_blank" rel="noopener noreferrer" className="rounded-full bg-cream text-ink px-5 sm:px-6 py-3 text-sm sm:text-base break-all">
+              daffa.mahardikazan@gmail.com
             </a>
-            <a href={CONTACT_PHONE_HREF} className="rounded-full bg-amberbrand text-ink px-5 sm:px-6 py-3 text-sm sm:text-base">
-              📞 {CONTACT_PHONE_DISPLAY}
+            <a href="https://wa.me/6287876122015" target="_blank" rel="noopener noreferrer" className="rounded-full bg-amberbrand text-ink px-5 sm:px-6 py-3 text-sm sm:text-base">
+              +62 878-7612-2015
             </a>
             <a href={CONTACT_LINKEDIN} target="_blank" rel="noreferrer" className="rounded-full border-2 border-cream px-5 sm:px-6 py-3 text-sm sm:text-base">
               in LinkedIn
