@@ -227,7 +227,7 @@ export default function Page() {
       {/* FEATURED PROJECTS */}
       <section id="projects" className="mx-auto max-w-6xl px-4 sm:px-5 py-12 sm:py-16 scroll-mt-24">
         <p className="reveal text-xs font-extrabold tracking-[0.25em] text-tealdeep">{t.projects.eyebrow}</p>
-        <h2 className="reveal font-display text-[28px] sm:text-4xl md:text-5xl leading-tight font-bold">{t.projects.title}</h2>
+        <h2 className="reveal font-display text-[28px] sm:text-4xl md:text-5xl leading-tight font-bold">{t.projects.sectionTitle}</h2>
 
         <article className="reveal mt-6 sm:mt-8 relative overflow-hidden rounded-3xl bg-ink text-cream p-6 sm:p-8 shadow-card border-t-8 border-amberbrand">
           <div aria-hidden="true" className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-amberbrand/10 blur-2xl" />
@@ -239,7 +239,7 @@ export default function Page() {
               {t.projects.category}
             </span>
 
-            <h3 className="mt-4 font-extrabold text-lg sm:text-2xl leading-snug">{t.projects.title}</h3>
+            <h3 className="mt-4 font-extrabold text-lg sm:text-2xl leading-snug">{t.projects.thesisTitle}</h3>
             <p className="mt-3 text-sm sm:text-base leading-relaxed opacity-80 max-w-3xl">{t.projects.description}</p>
 
             <ul className="mt-5 space-y-2 text-sm sm:text-[15px] opacity-90 list-disc pl-5">

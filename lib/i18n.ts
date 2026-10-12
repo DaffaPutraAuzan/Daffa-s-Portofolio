@@ -49,7 +49,8 @@ type Dict = {
   projects: {
     eyebrow: string;
     category: string;
-    title: string;
+    sectionTitle: string;
+    thesisTitle: string;
     description: string;
     highlights: string[];
     tags: string[];
@@ -268,7 +269,8 @@ export const dictionaries: Record<Locale, Dict> = {
     projects: {
       eyebrow: "FEATURED PROJECTS",
       category: "Tugas Akhir S1 • System Control & Protection",
-      title: "Design of Centralized Logic Control and Fail-Safe Protection Mechanism in Automatic Vertical Parking System Model for Four-Wheel Vehicles Based On Lift, Rotary, and Slider",
+      sectionTitle: "Final Year Thesis & Engineering Project",
+      thesisTitle: "Design of Centralized Logic Control and Fail-Safe Protection Mechanism in Automatic Vertical Parking System Model for Four-Wheel Vehicles Based On Lift, Rotary, and Slider",
       description: "Design and implementation of centralized logic control based on Finite State Machine (FSM) and fail-safe protection mechanisms in an automatic vertical parking system model. Integrates lift, rotary, and slider motion control with sensor interlocking protection to prevent mechanical collisions and system failures.",
       highlights: [
         "Centralized Logic Control Design & FSM State Architecture.",
@@ -492,7 +494,8 @@ export const dictionaries: Record<Locale, Dict> = {
     projects: {
       eyebrow: "PROYEK UNGGULAN",
       category: "Tugas Akhir S1 • System Control & Protection",
-      title: "Design of Centralized Logic Control and Fail-Safe Protection Mechanism in Automatic Vertical Parking System Model for Four-Wheel Vehicles Based On Lift, Rotary, and Slider",
+      sectionTitle: "Tugas Akhir S1 & Proyek Rekayasa",
+      thesisTitle: "Design of Centralized Logic Control and Fail-Safe Protection Mechanism in Automatic Vertical Parking System Model for Four-Wheel Vehicles Based On Lift, Rotary, and Slider",
       description: "Perancangan dan implementasi logika kontrol terpusat berbasis Finite State Machine (FSM) serta mekanisme perlindungan fail-safe pada model sistem parkir vertikal otomatis. Mengintegrasikan kontrol gerak lift, rotary, dan slider dengan proteksi interlocking sensor untuk mencegah benturan mekanis dan kegagalan sistem.",
       highlights: [
         "Centralized Logic Control Design & FSM State Architecture.",
