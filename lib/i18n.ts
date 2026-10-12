@@ -190,8 +190,12 @@ export const dictionaries: Record<Locale, Dict> = {
           credentialLink: "https://drive.google.com/file/d/1OAHo-ZRn1H6bChjrGkaKZ-wKDX9n_Qs6/view?usp=sharing",
           photos: [
             {
-              src: "https://drive.google.com/thumbnail?id=1WfOGJ3xwUZ56QKF-24W7NRA0q8zWHCRa&sz=w800",
-              caption: "Documentation at the Soekarno-Hatta Airport runway area monument",
+              src: "https://drive.google.com/thumbnail?id=1JLkwBZvlbPFnhKV_mQ3UvieO3pY_4b4E&sz=w800",
+              caption: "Meeting UNDIP Electrical Engineering alumni in the Electrical Network Division",
+            },
+            {
+              src: "https://drive.google.com/thumbnail?id=1VdZL882-gUEMzr2vqPBDK9NiLNDAXXvP&sz=w800",
+              caption: "Field coordination during Schneider Easergy MiCOM P54x Relay installation",
             },
           ],
         },
@@ -210,12 +214,8 @@ export const dictionaries: Record<Locale, Dict> = {
           credentialLink: "https://drive.google.com/file/d/1GucV3PzdbTDS_zah5Xy3i50m-VbS6lE9/view?usp=sharing",
           photos: [
             {
-              src: "https://drive.google.com/thumbnail?id=1JLkwBZvlbPFnhKV_mQ3UvieO3pY_4b4E&sz=w800",
-              caption: "Meeting UNDIP Electrical Engineering alumni in the Electrical Network Division",
-            },
-            {
-              src: "https://drive.google.com/thumbnail?id=1VdZL882-gUEMzr2vqPBDK9NiLNDAXXvP&sz=w800",
-              caption: "Field coordination during Schneider Easergy MiCOM P54x Relay installation",
+              src: "https://drive.google.com/thumbnail?id=1WfOGJ3xwUZ56QKF-24W7NRA0q8zWHCRa&sz=w800",
+              caption: "Documentation at the Soekarno-Hatta Airport runway area monument",
             },
             {
               src: "https://drive.google.com/thumbnail?id=1PPe8GHEjhy-JaxGNSUYUW2c6e5R-e18u&sz=w800",
@@ -406,8 +406,12 @@ export const dictionaries: Record<Locale, Dict> = {
           credentialLink: "https://drive.google.com/file/d/1OAHo-ZRn1H6bChjrGkaKZ-wKDX9n_Qs6/view?usp=sharing",
           photos: [
             {
-              src: "https://drive.google.com/thumbnail?id=1WfOGJ3xwUZ56QKF-24W7NRA0q8zWHCRa&sz=w800",
-              caption: "Dokumentasi monumen di wilayah runway Bandara Soekarno-Hatta",
+              src: "https://drive.google.com/thumbnail?id=1JLkwBZvlbPFnhKV_mQ3UvieO3pY_4b4E&sz=w800",
+              caption: "Bertemu Alumni Teknik Elektro Undip pada Divisi Electrical Network",
+            },
+            {
+              src: "https://drive.google.com/thumbnail?id=1VdZL882-gUEMzr2vqPBDK9NiLNDAXXvP&sz=w800",
+              caption: "Koordinasi lapangan saat instalasi Relay Schneider Easergy MiCOM P54x",
             },
           ],
         },
@@ -426,12 +430,8 @@ export const dictionaries: Record<Locale, Dict> = {
           credentialLink: "https://drive.google.com/file/d/1GucV3PzdbTDS_zah5Xy3i50m-VbS6lE9/view?usp=sharing",
           photos: [
             {
-              src: "https://drive.google.com/thumbnail?id=1JLkwBZvlbPFnhKV_mQ3UvieO3pY_4b4E&sz=w800",
-              caption: "Bertemu Alumni Teknik Elektro Undip pada Divisi Electrical Network",
-            },
-            {
-              src: "https://drive.google.com/thumbnail?id=1VdZL882-gUEMzr2vqPBDK9NiLNDAXXvP&sz=w800",
-              caption: "Koordinasi lapangan saat instalasi Relay Schneider Easergy MiCOM P54x",
+              src: "https://drive.google.com/thumbnail?id=1WfOGJ3xwUZ56QKF-24W7NRA0q8zWHCRa&sz=w800",
+              caption: "Dokumentasi monumen di wilayah runway Bandara Soekarno-Hatta",
             },
             {
               src: "https://drive.google.com/thumbnail?id=1PPe8GHEjhy-JaxGNSUYUW2c6e5R-e18u&sz=w800",
