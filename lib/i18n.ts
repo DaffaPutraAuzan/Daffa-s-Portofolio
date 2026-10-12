@@ -111,6 +111,7 @@ type Dict = {
   };
   contact: {
     title: string;
+    statusBadge: string;
     subtitle: string;
     body: string;
     copyright: string;
@@ -316,6 +317,7 @@ export const dictionaries: Record<Locale, Dict> = {
     },
     contact: {
       title: "Get In Touch",
+      statusBadge: "🟢 Available for Opportunities",
       subtitle: "Let's Build Something Reliable Together.",
       body: "Open for full-time Engineering opportunities, PLC/SCADA projects, and technical collaborations.",
       copyright: "© 2026 Daffa Mahardika Auzan Putra. All rights reserved.",
@@ -519,6 +521,7 @@ export const dictionaries: Record<Locale, Dict> = {
     },
     contact: {
       title: "Mari Terhubung",
+      statusBadge: "🟢 Terbuka untuk Peluang Kerja",
       subtitle: "Mari Berkolaborasi & Membangun Sistem Terdepan.",
       body: "Terbuka untuk peluang kerja full-time, proyek sistem kontrol, dan kolaborasi teknis.",
       copyright: "© 2026 Daffa Mahardika Auzan Putra. Semua hak dilindungi.",

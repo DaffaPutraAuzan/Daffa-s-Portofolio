@@ -264,20 +264,35 @@ export default function Page() {
       {/* CONTACT */}
       <section id="contact" className="mx-auto max-w-6xl px-4 sm:px-5 pb-16 sm:pb-20 scroll-mt-24">
         <div className="reveal rounded-[1.5rem] sm:rounded-[2rem] bg-ink text-cream p-6 sm:p-10 text-center shadow-card relative overflow-hidden">
+          <div aria-hidden="true" className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-amberbrand/10 blur-2xl" />
+          <div aria-hidden="true" className="pointer-events-none absolute -bottom-28 -right-20 h-80 w-80 rounded-full bg-tealdeep/20 blur-2xl" />
+          <span className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 rounded-full px-3 py-1 text-xs font-medium inline-flex items-center gap-2 mb-4">
+            {t.contact.statusBadge}
+          </span>
           <h2 className="font-display text-[32px] sm:text-4xl md:text-6xl leading-tight font-bold">{t.contact.title}</h2>
           <p className="mt-3 text-sm sm:text-base opacity-80 max-w-2xl mx-auto">{t.contact.body}</p>
           <div className="mt-6 sm:mt-7 flex flex-col sm:flex-row flex-wrap justify-center items-stretch sm:items-center gap-3 font-bold">
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=daffa.mahardikazan@gmail.com" target="_blank" rel="noopener noreferrer" className="rounded-full bg-cream text-ink px-5 sm:px-6 py-3 text-sm sm:text-base break-all">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=daffa.mahardikazan@gmail.com" target="_blank" rel="noopener noreferrer" className="rounded-full bg-cream text-ink px-5 sm:px-6 py-3 text-sm sm:text-base break-all inline-flex items-center justify-center gap-2">
+              <svg aria-hidden="true" className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
               daffa.mahardikazan@gmail.com
             </a>
-            <a href="https://wa.me/6287876122015" target="_blank" rel="noopener noreferrer" className="rounded-full bg-amberbrand text-ink px-5 sm:px-6 py-3 text-sm sm:text-base">
+            <a href="https://wa.me/6287876122015" target="_blank" rel="noopener noreferrer" className="rounded-full bg-amberbrand text-ink px-5 sm:px-6 py-3 text-sm sm:text-base inline-flex items-center justify-center gap-2">
+              <svg aria-hidden="true" className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
               +62 878-7612-2015
             </a>
-            <a href={CONTACT_LINKEDIN} target="_blank" rel="noreferrer" className="rounded-full border-2 border-cream px-5 sm:px-6 py-3 text-sm sm:text-base">
-              in LinkedIn
+            <a href={CONTACT_LINKEDIN} target="_blank" rel="noreferrer" className="rounded-full border-2 border-cream px-5 sm:px-6 py-3 text-sm sm:text-base inline-flex items-center justify-center gap-2">
+              <svg aria-hidden="true" className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+              LinkedIn
             </a>
           </div>
-          <p className="mt-6 text-xs opacity-60">{t.contact.copyright}</p>
+          <p className="border-t border-white/10 pt-6 mt-8 text-xs opacity-60">{t.contact.copyright}</p>
         </div>
       </section>
 
