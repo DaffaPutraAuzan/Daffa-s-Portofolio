@@ -24,7 +24,31 @@ export default function Page() {
   useReveal();
   const { t } = useLocale();
   const [hireOpen, setHireOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   console.log("CURRENT SKILLS GROUPS:", t.skills?.groups);
+
+  const NAV_LINKS = [
+    { href: "#about", label: t.nav.about },
+    { href: "#experience", label: t.nav.experience },
+    { href: "#projects", label: t.nav.projects },
+    { href: "#skills", label: t.nav.skills },
+    { href: "#certifications", label: t.nav.certifications },
+    { href: "#contact", label: t.nav.contact },
+  ];
+
+  // Tutup menu mobile dengan tombol Escape + kunci scroll saat terbuka.
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsMobileMenuOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <main className="min-h-screen overflow-x-clip">
@@ -52,8 +76,53 @@ export default function Page() {
               >
                 {t.nav.hire}
               </button>
+              <button
+                type="button"
+                onClick={() => setIsMobileMenuOpen((v) => !v)}
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-menu"
+                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-full bg-cream/15 text-cream hover:bg-cream/25 transition-colors"
+              >
+                {isMobileMenuOpen ? (
+                  <svg aria-hidden="true" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                    <path d="M18 6 6 18" />
+                    <path d="m6 6 12 12" />
+                  </svg>
+                ) : (
+                  <svg aria-hidden="true" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                    <path d="M4 6h16" />
+                    <path d="M4 12h16" />
+                    <path d="M4 18h16" />
+                  </svg>
+                )}
+              </button>
             </div>
           </nav>
+
+          {/* MOBILE MENU */}
+          <div
+            id="mobile-menu"
+            className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
+              isMobileMenuOpen ? "mt-3 max-h-[70vh] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+            }`}
+          >
+            <div className="rounded-2xl bg-ink/98 backdrop-blur p-2 text-cream shadow-card border border-white/10">
+              {NAV_LINKS.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold hover:bg-white/10 hover:text-amberbrand transition-colors"
+                >
+                  {link.label}
+                  <svg aria-hidden="true" className="w-3.5 h-3.5 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="m9 18 6-6-6-6" />
+                  </svg>
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </header>
 
