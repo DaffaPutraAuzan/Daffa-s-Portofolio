@@ -445,21 +445,21 @@ export const dictionaries: Record<Locale, Dict> = {
       groups: [
         {
           title: "⚡ Proteksi & Kontrol",
-          items: ["Relay Proteksi", "Koordinasi Relay", "Troubleshooting Rangkaian Kontrol", "Standar Keselamatan Listrik"],
+          items: ["Relay Proteksi", "Koordinasi Relay", "Troubleshooting Rangkaian Kontrol", "Standar Keselamatan Listrik"]
         },
         {
           title: "🤖 Automasi",
-          items: ["Konfigurasi PLC", "Monitoring SCADA", "Proteksi & Kontrol Motor", "Pembacaan Skema Teknik"],
+          items: ["Konfigurasi PLC", "Monitoring SCADA", "Proteksi & Kontrol Motor", "Pembacaan Skema Teknik"]
         },
         {
           title: "🔌 Sistem Tenaga",
-          items: ["Pemeliharaan GIS", "Pemeliharaan Generator", "Distribusi Tenaga Listrik", "Inspeksi Preventif"],
+          items: ["Pemeliharaan GIS", "Pemeliharaan Generator", "Distribusi Tenaga Listrik", "Inspeksi Preventif"]
         },
         {
           title: "🎤 Non-Teknis",
-          items: ["Kerja Sama Tim", "Public Speaking", "Sponsorship & Negosiasi", "Perencanaan Acara"],
-        },
-      ],
+          items: ["Kerja Sama Tim", "Public Speaking", "Sponsorship & Negosiasi", "Perencanaan Acara"]
+        }
+      ]
     },
     certifications: {
       eyebrow: "SERTIFIKASI & LISENSI",

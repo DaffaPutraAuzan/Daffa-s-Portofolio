@@ -24,6 +24,7 @@ export default function Page() {
   useReveal();
   const { t } = useLocale();
   const [hireOpen, setHireOpen] = useState(false);
+  console.log("CURRENT SKILLS GROUPS:", t.skills?.groups);
 
   return (
     <main className="min-h-screen overflow-x-clip">
@@ -201,11 +202,11 @@ export default function Page() {
         <p className="reveal text-xs font-extrabold tracking-[0.25em] text-tealdeep">{t.skills.eyebrow}</p>
         <h2 className="reveal font-display text-[28px] sm:text-4xl md:text-5xl leading-tight font-bold">{t.skills.title}</h2>
         <div className="mt-6 sm:mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-          {(t.skills?.groups || []).map((s, idx) => (
-            <div key={s.title} className={`reveal rounded-3xl p-6 shadow-card ${idx % 2 ? "bg-ink text-cream" : "bg-white"}`}>
-              <h3 className="font-extrabold text-lg mt-2">{s.title}</h3>
+          {(t.skills?.groups || []).map((group: any, idx: number) => (
+            <div key={group.title} className={`reveal rounded-3xl p-6 shadow-card ${idx % 2 ? "bg-ink text-cream" : "bg-white"}`}>
+              <h3 className="font-extrabold text-lg mt-2">{group.title}</h3>
               <ul className="mt-3 space-y-2 text-sm opacity-90">
-                {s.items.map((it) => (
+                {group.items.map((it: any) => (
                   <li key={it} className={`rounded-xl px-3 py-2 font-medium ${idx % 2 ? "bg-white/10" : "bg-black/5"}`}>
                     ✓ {it}
                   </li>
