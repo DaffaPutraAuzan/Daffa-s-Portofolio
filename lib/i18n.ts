@@ -224,19 +224,6 @@ export const dictionaries: Record<Locale, Dict> = {
           ],
         },
         {
-          id: "tesla-event",
-          company: "Electrical Tesla Event",
-          location: "Sponsorship Coordinator Staff",
-          period: "ORGANIZATION • SEP 2024 — NOV 2024",
-          role: "Sponsorship Coordinator Staff",
-          points: [
-            "Built the sponsorship strategy, drafted proposals and sponsor packages.",
-            "Coordinated with the chair and committees, executed contracts, and managed finances to strengthen the event's brand identity.",
-          ],
-          tags: [],
-          credentialLink: "https://drive.google.com/file/d/1j5yH83KfntDHgsWRkdSdEfbFKC8XjcnY/view?usp=sharing",
-        },
-        {
           id: "tko",
           company: "Biro Teknik Kontrol Otomat (TKO)",
           location: "Staff Divisi Student Development",
@@ -438,19 +425,6 @@ export const dictionaries: Record<Locale, Dict> = {
               caption: "Implementasi arus untuk pengetesan Line Differential pada proteksi relay",
             },
           ],
-        },
-        {
-          id: "tesla-event",
-          company: "Electrical Tesla Event",
-          location: "Sponsorship Coordinator Staff",
-          period: "ORGANISASI • SEP 2024 — NOV 2024",
-          role: "Sponsorship Coordinator Staff",
-          points: [
-            "Menyusun strategi sponsorship, membuat proposal & paket sponsor.",
-            "Koordinasi dengan ketua & panitia, eksekusi kontrak & pengelolaan keuangan untuk brand identity event.",
-          ],
-          tags: [],
-          credentialLink: "https://drive.google.com/file/d/1j5yH83KfntDHgsWRkdSdEfbFKC8XjcnY/view?usp=sharing",
         },
         {
           id: "tko",
