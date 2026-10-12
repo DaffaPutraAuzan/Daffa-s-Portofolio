@@ -169,6 +169,22 @@ export default function Page() {
                 <ul className="mt-4 space-y-2 text-[15px] text-ink/80 list-disc pl-5">
                   {e.points.map((p, i) => <li key={i}>{p}</li>)}
                 </ul>
+                {(e.photos || []).length > 0 && (
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
+                    {(e.photos || []).map((p, i) => (
+                      <figure key={i} className="group">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={p.src}
+                          alt={p.caption}
+                          loading="lazy"
+                          className="aspect-[4/3] w-full object-cover rounded-xl border border-ink/10 shadow-sm transition-transform duration-200 hover:scale-105"
+                        />
+                        <figcaption className="mt-1.5 text-[11px] leading-snug text-ink/60">{p.caption}</figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                )}
                 {e.tags.length > 0 && (
                   <div className="mt-4 flex flex-wrap gap-2">
                     {e.tags.map((tag) => (

@@ -26,6 +26,7 @@ export type Experience = {
   tags: string[];
   credentialLink?: string;
   id?: string;
+  photos?: { src: string; caption: string }[];
 };
 
 export type SkillGroup = { title: string; items: string[] };
@@ -187,6 +188,24 @@ export const dictionaries: Record<Locale, Dict> = {
           ],
           tags: ["Relay", "SCADA", "PLC", "Fiber Optic", "Power Distribution"],
           credentialLink: "https://drive.google.com/file/d/1OAHo-ZRn1H6bChjrGkaKZ-wKDX9n_Qs6/view?usp=sharing",
+          photos: [
+            {
+              src: "https://lh3.googleusercontent.com/d/1WfOGJ3xwUZ56QKF-24W7NRA0q8zWHCRa",
+              caption: "Documentation at the Soekarno-Hatta Airport runway area monument",
+            },
+            {
+              src: "https://lh3.googleusercontent.com/d/1JLkwBZvlbPFnhKV_mQ3UvieO3pY_4b4E",
+              caption: "Meeting UNDIP Electrical Engineering alumni in the Electrical Network Division",
+            },
+            {
+              src: "https://lh3.googleusercontent.com/d/1VdZL882-gUEMzr2vqPBDK9NiLNDAXXvP",
+              caption: "Field coordination during Schneider Easergy MiCOM P54x Relay installation",
+            },
+            {
+              src: "https://lh3.googleusercontent.com/d/1PPe8GHEjhy-JaxGNSUYUW2c6e5R-e18u",
+              caption: "Current injection testing for Line Differential relay protection",
+            },
+          ],
         },
         {
           id: "ias-support",
@@ -201,6 +220,24 @@ export const dictionaries: Record<Locale, Dict> = {
           ],
           tags: ["GIS", "Power Station", "Protection Relay", "PLC", "SCADA"],
           credentialLink: "https://drive.google.com/file/d/1GucV3PzdbTDS_zah5Xy3i50m-VbS6lE9/view?usp=sharing",
+          photos: [
+            {
+              src: "https://lh3.googleusercontent.com/d/1WfOGJ3xwUZ56QKF-24W7NRA0q8zWHCRa",
+              caption: "Documentation at the Soekarno-Hatta Airport runway area monument",
+            },
+            {
+              src: "https://lh3.googleusercontent.com/d/1JLkwBZvlbPFnhKV_mQ3UvieO3pY_4b4E",
+              caption: "Meeting UNDIP Electrical Engineering alumni in the Electrical Network Division",
+            },
+            {
+              src: "https://lh3.googleusercontent.com/d/1VdZL882-gUEMzr2vqPBDK9NiLNDAXXvP",
+              caption: "Field coordination during Schneider Easergy MiCOM P54x Relay installation",
+            },
+            {
+              src: "https://lh3.googleusercontent.com/d/1PPe8GHEjhy-JaxGNSUYUW2c6e5R-e18u",
+              caption: "Current injection testing for Line Differential relay protection",
+            },
+          ],
         },
         {
           id: "tesla-event",
@@ -383,6 +420,24 @@ export const dictionaries: Record<Locale, Dict> = {
           ],
           tags: ["Relay", "SCADA", "PLC", "Fiber Optic", "Power Distribution"],
           credentialLink: "https://drive.google.com/file/d/1OAHo-ZRn1H6bChjrGkaKZ-wKDX9n_Qs6/view?usp=sharing",
+          photos: [
+            {
+              src: "https://lh3.googleusercontent.com/d/1WfOGJ3xwUZ56QKF-24W7NRA0q8zWHCRa",
+              caption: "Dokumentasi monumen di wilayah runway Bandara Soekarno-Hatta",
+            },
+            {
+              src: "https://lh3.googleusercontent.com/d/1JLkwBZvlbPFnhKV_mQ3UvieO3pY_4b4E",
+              caption: "Bertemu Alumni Teknik Elektro Undip pada Divisi Electrical Network",
+            },
+            {
+              src: "https://lh3.googleusercontent.com/d/1VdZL882-gUEMzr2vqPBDK9NiLNDAXXvP",
+              caption: "Koordinasi lapangan saat instalasi Relay Schneider Easergy MiCOM P54x",
+            },
+            {
+              src: "https://lh3.googleusercontent.com/d/1PPe8GHEjhy-JaxGNSUYUW2c6e5R-e18u",
+              caption: "Implementasi arus untuk pengetesan Line Differential pada proteksi relay",
+            },
+          ],
         },
         {
           id: "ias-support",
@@ -397,6 +452,24 @@ export const dictionaries: Record<Locale, Dict> = {
           ],
           tags: ["GIS", "Power Station", "Protection Relay", "PLC", "SCADA"],
           credentialLink: "https://drive.google.com/file/d/1GucV3PzdbTDS_zah5Xy3i50m-VbS6lE9/view?usp=sharing",
+          photos: [
+            {
+              src: "https://lh3.googleusercontent.com/d/1WfOGJ3xwUZ56QKF-24W7NRA0q8zWHCRa",
+              caption: "Dokumentasi monumen di wilayah runway Bandara Soekarno-Hatta",
+            },
+            {
+              src: "https://lh3.googleusercontent.com/d/1JLkwBZvlbPFnhKV_mQ3UvieO3pY_4b4E",
+              caption: "Bertemu Alumni Teknik Elektro Undip pada Divisi Electrical Network",
+            },
+            {
+              src: "https://lh3.googleusercontent.com/d/1VdZL882-gUEMzr2vqPBDK9NiLNDAXXvP",
+              caption: "Koordinasi lapangan saat instalasi Relay Schneider Easergy MiCOM P54x",
+            },
+            {
+              src: "https://lh3.googleusercontent.com/d/1PPe8GHEjhy-JaxGNSUYUW2c6e5R-e18u",
+              caption: "Implementasi arus untuk pengetesan Line Differential pada proteksi relay",
+            },
+          ],
         },
         {
           id: "tesla-event",
